@@ -1,0 +1,52 @@
+package com.example.aqualuminexapp;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AquaLuminexMain extends Application implements Initializable {
+
+    public static final int COUNT_LIMIT = 500000;
+    private static Scene scene;
+
+    public static void main(String[] args) {
+//        LauncherImpl.launchApplication(AquaLuminexMain.class, MyPreloader.class, args);
+        launch();
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("splash-screen.fxml"));
+        scene = new Scene(fxmlLoader.load());
+
+        stage.setResizable(false);
+        stage.setTitle("AquaLuminex Utility App");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            Thread.sleep(5000);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            scene.setRoot(fxmlLoader.load());
+        } catch (InterruptedException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /*@Override
+    public void init() throws Exception {
+        for (int i = 0; i < COUNT_LIMIT; i++) {
+            double progress = (double) (100 * i) / COUNT_LIMIT;
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
+        }
+    }*/
+}

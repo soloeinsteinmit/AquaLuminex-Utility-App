@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="973.0" styleClass="login-background" stylesheets="@css/login.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.LoginController">
+    <children>
+        <ImageView disable="true" fitHeight="321.0" fitWidth="449.0" layoutX="286.0" layoutY="-145.0" preserveRatio="true">
+            <image>
+                <Image url="@images/Ellipse12.png" />
+            </image>
+        </ImageView>
+        <ImageView disable="true" fitHeight="791.0" fitWidth="938.0" layoutX="360.0" layoutY="44.0" preserveRatio="true">
+            <image>
+                <Image url="@images/Ellipse13.png" />
+            </image>
+        </ImageView>
+        <BorderPane layoutX="95.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="766.0" styleClass="center-border-pane" stylesheets="@css/login.css">
+            <left>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="383.0" styleClass="border-pane-anchor-panes-left" stylesheets="@css/login.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView disable="true" fitHeight="25.0" fitWidth="102.0" layoutX="14.0" layoutY="14.0" preserveRatio="true">
+                            <image>
+                                <Image url="@images/logo.png" />
+                            </image>
+                        </ImageView>
+                        <Pane layoutX="20.0" layoutY="74.0" prefHeight="35.0" prefWidth="339.0" styleClass="buttons">
+                            <children>
+                                <Label layoutX="253.0" layoutY="-1.0" prefHeight="34.0" prefWidth="86.0" stylesheets="@css/login.css" text="Luminex" textAlignment="CENTER" textFill="#6f4eb9" wrapText="true">
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="7.0" layoutY="-1.0" prefHeight="34.0" prefWidth="245.0" style="-fx-font-family: 'Poppins';" styleClass="header-label" stylesheets="@css/fonts.css" text="Welcome back to Aqua" textAlignment="CENTER" wrapText="true" />
+                            </children>
+                        </Pane>
+                        <Label layoutX="44.0" layoutY="124.0" prefHeight="19.0" prefWidth="71.0" text="Account Id" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                        </Label>
+                        <MFXTextField floatMode="DISABLED" layoutX="42.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="304.0" promptText="Enter account Id" stylesheets="@css/login.css">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </MFXTextField>
+                        <MFXTextField floatMode="DISABLED" layoutX="42.0" layoutY="221.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="304.0" promptText="Enter password" stylesheets="@css/login.css">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </MFXTextField>
+                        <MFXButton id="login-button" accessibleRole="BUTTON" layoutX="40.0" layoutY="308.0" prefHeight="40.0" prefWidth="305.0" stylesheets="@css/login.css" text="Login now" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                        </MFXButton>
+                        <Pane layoutX="232.0" layoutY="269.0" prefHeight="25.0" prefWidth="114.0">
+                            <children>
+                                <Label id="forgot-button" alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="23.0" prefWidth="96.0" stylesheets="@css/login.css" text="Forgot Password" textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <ImageView id="glass-morphism-image" fitHeight="114.0" fitWidth="17.0" layoutX="94.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/sad_48px.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="357.0" prefHeight="23.0" prefWidth="304.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" prefHeight="23.0" prefWidth="159.0" text="Don't have an Account?" textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ImageView id="glass-morphism-image" fitHeight="114.0" fitWidth="17.0" layoutX="245.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/happy_48px.png" />
+                                    </image>
+                                </ImageView>
+                                <Label id="register-button" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" prefHeight="23.0" prefWidth="55.0" stylesheets="@css/login.css" text="Register" textAlignment="CENTER" textFill="#6f4eb9" wrapText="true">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <Label layoutX="44.0" layoutY="202.0" prefHeight="19.0" prefWidth="71.0" text="Password" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </left>
+            <right>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="383.0" styleClass="border-pane-anchor-panes-right" stylesheets="@css/login.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="424.0" fitWidth="382.0" layoutX="1.0">
+                            <image>
+                                <Image url="@images/left_border.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView id="glass-morphism-image" fitHeight="180.0" fitWidth="332.0" layoutX="26.0" layoutY="218.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@images/glass-morphism.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView id="glass-morphism-image" fitHeight="150.0" fitWidth="169.0" layoutX="118.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/graph_384px.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="27.0" layoutY="267.0" prefHeight="100.0" prefWidth="316.0" text="Simplified utility bill tracking for better expenditure management." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="17.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="70.0" layoutY="227.0" prefHeight="34.0" prefWidth="245.0" text="Expense monitering" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="Segoe UI Bold" size="21.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </right>
+        </BorderPane>
+    </children>
+</AnchorPane>

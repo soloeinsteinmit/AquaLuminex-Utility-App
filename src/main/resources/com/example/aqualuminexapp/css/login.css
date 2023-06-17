@@ -1,0 +1,78 @@
+
+.root {
+    -violet-color: #6F4EB9;
+    /*-fx-font-family: "Poppins";*/
+}
+
+* {
+    -fx-font-family: "Poppins";
+}
+
+/*header label*/
+.header-label {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 18;
+    /*-fx-background-color: #ECECEC;*/
+}
+
+/* login page */
+.login-background {
+    -fx-background-color: #ECECEC;
+}
+
+.center-border-pane {
+    -fx-background-color: transparent;
+}
+
+
+.border-pane-anchor-panes-left {
+    -fx-background-radius: 10px 0 0 10px;
+    -fx-background-color: white;
+}
+
+.border-pane-anchor-panes-right {
+    -fx-background-radius: 0px 10px 10px 0px;
+    -fx-background-color: -violet-color;
+}
+
+#glass-morphism-image {
+
+
+}
+
+/* Login form */
+
+
+#login-button {
+
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-background-color: #6F4EB9;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+
+}
+
+#login-button:hover {
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-background-color: #6244a4;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+}
+
+#register-button, #forgot-button {
+    -fx-font-family: "Poppins Black";
+    -fx-cursor: hand;
+
+}
+
+#forgot-button:hover {
+    -fx-text-fill: #6F4EB9;
+
+}
+
+
+#register-button:hover {
+    -fx-text-fill: #2312bf;
+}

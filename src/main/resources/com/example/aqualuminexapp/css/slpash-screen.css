@@ -1,0 +1,30 @@
+/*@font-face {*/
+/*    font-family: Poppins;*/
+/*    src: url('../fonts/Poppins/Poppins_Regular.ttf');*/
+/*}*/
+
+.label-fonts {
+    -fx-font-family: "Poppins";
+}
+
+.mfx-progress-bar .track {
+    -fx-fill: #E0E0E0;
+}
+
+/*.mfx-progress-bar .bar1,
+.mfx-progress-bar:indeterminate .bar1,
+.mfx-progress-bar:indeterminate .bar2 {
+    !*-fx-fill: #6244a4;*!
+    -fx-fill: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #6244a4 0.0%, #6244a4 0.6711%, #2312bf 100.0%);
+}*/
+.mfx-progress-bar .bar1,
+.mfx-progress-bar:indeterminate .bar1 {
+    /*-fx-fill: #6244a4;*/
+    -fx-fill: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #6244a4 0.0%, #6244a4 0.6711%, #2312bf 100.0%);
+}
+
+.mfx-progress-bar .bar1,
+.mfx-progress-bar:indeterminate .bar2 {
+    /*-fx-fill: #6244a4;*/
+    -fx-fill: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #2312bf 0.0%, #6244a4 0.6711%, #6244a4 100.0%);
+}

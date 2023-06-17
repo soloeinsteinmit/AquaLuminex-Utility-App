@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="splashScreenParentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.AquaLuminexMain">
+    <children>
+        <Pane layoutX="147.0" layoutY="122.0">
+            <children>
+                <Label text="Aqua">
+                    <font>
+                        <Font name="Ebrima Bold" size="54.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.2759999930858612" green="0.4796571433544159" blue="0.6000000238418579" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.45760834217071533" green="0.20469999313354492" blue="0.8899999856948853" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="129.0" text="Luminex">
+                    <font>
+                        <Font name="Ebrima Bold" size="54.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.2759999930858612" green="0.4796571433544159" blue="0.6000000238418579" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.45760834217071533" green="0.20469999313354492" blue="0.8899999856948853" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Circle fill="WHITE" layoutX="246.0" layoutY="15.0" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                <ImageView fitHeight="23.0" fitWidth="37.0" layoutX="241.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo-only.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Label layoutX="214.0" layoutY="337.0" text="All Right Reversed AquaLuminex 2023">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="496.0" layoutY="271.0" text="Loading:">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+        <MFXProgressBar fx:id="progressBarBottom" layoutX="-2.0" layoutY="289.0" prefHeight="5.0" prefWidth="608.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" />
+        <MFXProgressBar fx:id="progressBarLeft" layoutX="-110.0" layoutY="177.0" prefHeight="5.0" prefWidth="366.0" rotate="-90.0" />
+        <Label fx:id="progressCounterLabel" layoutX="547.0" layoutY="272.0" text="99.9 %" wrapText="true">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+        <MFXProgressBar fx:id="progressBarTop" layoutX="-4.0" layoutY="53.0" prefHeight="5.0" prefWidth="608.0" rotate="180.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" />
+        <Label fx:id="loadingMessage" layoutX="81.0" layoutY="34.0" prefHeight="16.0" prefWidth="233.0" text="Getting things ready..." wrapText="true">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="147.0" layoutY="193.0" prefHeight="20.0" prefWidth="85.0" text="Version 1.0.0" wrapText="true">
+            <font>
+                <Font name="Segoe UI Semibold Italic" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

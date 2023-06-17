@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="splashScreenParentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.AquaLuminexMain">
+    <children>
+        <Pane layoutX="127.0" layoutY="118.0">
+            <children>
+                <Label text="Aqua">
+                    <font>
+                        <Font name="Ebrima Bold" size="54.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.3843137323856354" green="0.2666666805744171" blue="0.6431372761726379" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="0.006711409395973154">
+                                    <color>
+                                        <Color red="0.3843137323856354" green="0.2666666805744171" blue="0.6431372761726379" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.13725490868091583" green="0.07058823853731155" blue="0.7490196228027344" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label layoutX="129.0" text="Luminex">
+                    <font>
+                        <Font name="Ebrima Bold" size="54.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.13725490868091583" green="0.07058823853731155" blue="0.7490196228027344" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.43773147463798523" green="0.2569444477558136" blue="0.75" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Circle fill="WHITE" layoutX="246.0" layoutY="15.0" radius="9.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                <ImageView fx:id="logoDotImg" fitHeight="23.0" fitWidth="37.0" layoutX="241.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo-only.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Label layoutX="6.0" layoutY="302.0" styleClass="label-fonts" stylesheets="@css/slpash-screen.css" text="All Right Reversed AquaLuminex 2023">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+        <Circle fx:id="circle" fill="#dddddd" layoutX="496.0" layoutY="-4.0" radius="100.0" stroke="WHITE" strokeType="INSIDE" />
+        <MFXProgressBar fx:id="progressBarBottom" layoutX="-2.0" layoutY="289.0" prefHeight="5.0" prefWidth="608.0" stylesheets="@css/slpash-screen.css" visible="false" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" />
+        <MFXProgressBar fx:id="progressBarLeft" layoutX="-110.0" layoutY="177.0" prefHeight="5.0" prefWidth="366.0" rotate="-90.0" stylesheets="@css/slpash-screen.css" visible="false" />
+        <MFXProgressBar fx:id="progressBarTop" layoutX="-4.0" layoutY="53.0" prefHeight="5.0" prefWidth="608.0" rotate="180.0" stylesheets="@css/slpash-screen.css" visible="false" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" />
+        <Label fx:id="loadingMessage" alignment="CENTER_RIGHT" layoutX="458.0" layoutY="302.0" prefHeight="17.0" prefWidth="127.0" styleClass="label-fonts" stylesheets="@css/slpash-screen.css" text="Welcome back..." wrapText="true">
+            <font>
+                <Font name="Segoe UI Semibold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="127.0" layoutY="189.0" prefHeight="20.0" prefWidth="85.0" styleClass="label-fonts" stylesheets="@css/slpash-screen.css" text="Version 1.0.0" wrapText="true">
+            <font>
+                <Font name="Palatino Linotype Italic" size="14.0" />
+            </font>
+        </Label>
+      <MFXProgressBar fx:id="progressBarCounter" layoutX="-4.0" layoutY="321.0" prefHeight="7.0" prefWidth="608.0" progress="0.59" stylesheets="@css/slpash-screen.css" />
+    </children>
+</AnchorPane>
