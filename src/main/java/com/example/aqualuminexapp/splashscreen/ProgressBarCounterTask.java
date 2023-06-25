@@ -3,7 +3,7 @@ package com.example.aqualuminexapp.splashscreen;
 import javafx.concurrent.Task;
 
 public class ProgressBarCounterTask extends Task<Long> {
-    public static final long COUNT_LIMIT = 50000000L;
+    public static final long COUNT_LIMIT = 500000000L;
     public static boolean loadNewStage = false;
 
 

@@ -1,5 +1,4 @@
 module com.example.aqualuminexapp {
-//    requires javafx.controls;
     requires javafx.fxml;
     requires org.slf4j;
     requires multi.map;
@@ -11,7 +10,7 @@ module com.example.aqualuminexapp {
     requires de.jensd.fx.glyphs.fontawesome;
     requires VirtualizedFX;
     requires java.mail;
-//    requires javafx.graphics;
+    requires TrayTester;
 
 
     exports com.example.aqualuminexapp;
@@ -33,4 +32,5 @@ module com.example.aqualuminexapp {
 
     // opens images
     opens com.example.aqualuminexapp.images;
+    opens com.example.aqualuminexapp.utils to javafx.fxml;
 }
