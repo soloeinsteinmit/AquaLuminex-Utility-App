@@ -23,10 +23,12 @@ public class ProgressBarAnimationBackward implements Runnable {
             Platform.runLater(() -> {
                 progress = Math.round((progressBar.getProgress() - 0.1) * 10.0) / 10.0;
                 progressBar.setProgress(progress);
+
 //                System.out.println("progress num back counter= " + progressBar.getProgress());
                 if (progressBar.getProgress() == 0.0) {
 
-                    System.out.println("progress num back      = " + progressBar.getProgress());
+//                    System.out.println("progress num back      = " + progressBar.getProgress());
+                    progressBar.setPrefHeight(4);
 
                 }
             });

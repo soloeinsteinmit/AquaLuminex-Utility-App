@@ -21,7 +21,14 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ChangingScenes {
-
+    /**
+     * @param className       class to get resources from.
+     * @param parentContainer container where transitions happens.
+     * @param container       content to be changed.
+     * @param filename        the name of the fxml file you want to change
+     * @param direction       the transition direction weather front or back
+     * @code for making transitions in the application
+     */
     public static void translateScene(Class<?> className, StackPane parentContainer, AnchorPane container,
                                       String filename,
                                       char direction) {

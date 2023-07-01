@@ -9,7 +9,8 @@ module com.example.aqualuminexapp {
     requires GNAvatarView;
     requires de.jensd.fx.glyphs.fontawesome;
     requires VirtualizedFX;
-    requires java.mail;
+    requires javax.mail.api;
+    //requires java.mail;
     requires TrayTester;
 
 

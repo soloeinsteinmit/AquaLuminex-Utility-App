@@ -1,0 +1,42 @@
+/*
+progress bar
+*/
+.mfx-progress-bar:determinate .track {
+    -fx-fill: rgba(98, 68, 164, 0.44);
+}
+
+.mfx-progress-bar .bar1,
+.mfx-progress-bar:determinate .bar1,
+.mfx-progress-bar:determinate .bar2 {
+    -fx-fill: #6244a4;
+}
+
+.mfx-progress-bar .track,
+.mfx-progress-bar .bar1,
+.mfx-progress-bar .bar2 {
+    -fx-arc-height: 6;
+    -fx-arc-width: 6;
+}
+
+.mfx-progress-bar:disabled .track {
+    -fx-fill: #6244a4;
+}
+
+
+/*
+next button
+*/
+#next-button {
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-background-color: #6F4EB9;
+    -fx-text-fill: white;
+
+}
+
+#next-button:hover {
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-background-color: #6244a4;
+    -fx-text-fill: white;
+}

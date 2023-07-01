@@ -2,14 +2,17 @@ package com.example.aqualuminexapp.utils;
 
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import javafx.application.Platform;
+import javafx.scene.image.ImageView;
 
 public class ProgressBarAnimationForward implements Runnable {
 
     private static double progress;
     MFXProgressBar progressBar;
+    ImageView doneImg;
 
-    public ProgressBarAnimationForward(MFXProgressBar progressBar) {
+    public ProgressBarAnimationForward(MFXProgressBar progressBar, ImageView doneImg) {
         this.progressBar = progressBar;
+        this.doneImg = doneImg;
     }
 
     @Override
@@ -21,10 +24,11 @@ public class ProgressBarAnimationForward implements Runnable {
             Platform.runLater(() -> {
                 progress = Math.round((progressBar.getProgress() + 0.1) * 10.0) / 10.0;
                 progressBar.setProgress(progress);
+                progressBar.setPrefHeight(5);
                 if ((int) progressBar.getProgress() == 1) {
 
-                    System.out.println("progress num = " + progressBar.getProgress());
-
+//                    System.out.println("progress num = " + progressBar.getProgress());
+                    doneImg.setVisible(true);
 
                 }
 //                progressBar.progressProperty().bind(progressBar.getProgress());

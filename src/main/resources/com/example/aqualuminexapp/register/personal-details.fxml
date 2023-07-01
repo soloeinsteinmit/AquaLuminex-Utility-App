@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.gleidson28.GNAvatarView?>
+<?import io.github.palexdev.materialfx.controls.MFXRadioButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="userDetailsAnchorPane" prefHeight="438.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.register.PersonalDetailsController">
+    <children>
+        <Label layoutX="239.0" layoutY="35.0" text="Personal Details">
+            <font>
+                <Font name="Segoe UI Bold" size="27.0" />
+            </font>
+        </Label>
+      <Pane layoutX="441.0" layoutY="127.0">
+         <children>
+            <GNAvatarView prefHeight="155.0" prefWidth="155.0" stroke="#f0f0f000" strokeWidth="1.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 155;" type="CIRCLE" />
+            <Label graphicTextGap="3.0" layoutX="33.0" layoutY="86.0" prefHeight="21.0" prefWidth="89.0" text="Drag and drop or" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="11.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" graphicTextGap="3.0" layoutX="33.0" layoutY="99.0" prefHeight="21.0" prefWidth="89.0" text="Browse" textAlignment="CENTER" textFill="#2b3bb2" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="67.0" layoutY="77.0">
+         <children>
+            <MFXTextField floatMode="DISABLED" layoutY="29.0" minHeight="40.0" prefHeight="40.0" prefWidth="312.0" promptText="Sam Howard">
+               <font>
+                  <Font name="Segoe UI Semibold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </MFXTextField>
+            <Label graphicTextGap="3.0" layoutY="5.0" prefHeight="21.0" prefWidth="67.0" text="Username" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" graphicTextGap="3.0" layoutX="63.0" minHeight="15.0" prefHeight="21.0" prefWidth="14.0" text="*" textAlignment="CENTER" textFill="RED" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="67.0" layoutY="157.0">
+         <children>
+            <MFXTextField floatMode="DISABLED" layoutY="29.0" minHeight="40.0" prefHeight="40.0" prefWidth="312.0" promptText="me@gmail.com">
+               <font>
+                  <Font name="Segoe UI Semibold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </MFXTextField>
+            <Label graphicTextGap="3.0" layoutY="5.0" prefHeight="21.0" prefWidth="97.0" text="Email" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" graphicTextGap="3.0" layoutX="29.0" minHeight="15.0" prefHeight="21.0" prefWidth="14.0" text="*" textAlignment="CENTER" textFill="RED" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="67.0" layoutY="247.0">
+         <children>
+            <MFXTextField floatMode="DISABLED" layoutY="29.0" minHeight="40.0" prefHeight="40.0" prefWidth="312.0" promptText="055 555 5555">
+               <font>
+                  <Font name="Segoe UI Semibold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </MFXTextField>
+            <Label graphicTextGap="3.0" layoutY="5.0" prefHeight="21.0" prefWidth="119.0" text="Telephone number" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" graphicTextGap="3.0" layoutX="111.0" layoutY="3.0" minHeight="15.0" prefHeight="21.0" prefWidth="14.0" text="*" textAlignment="CENTER" textFill="RED" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="66.0" layoutY="329.0">
+         <children>
+            <Label graphicTextGap="3.0" layoutY="3.0" prefHeight="21.0" prefWidth="83.0" text="Select gender" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" graphicTextGap="3.0" layoutX="83.0" minHeight="15.0" prefHeight="21.0" prefWidth="14.0" text="*" textAlignment="CENTER" textFill="RED" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="21.0" />
+               </font>
+            </Label>
+            <MFXRadioButton layoutY="33.0" text="Male">
+               <font>
+                  <Font name="Segoe UI Semibold" size="13.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </MFXRadioButton>
+            <MFXRadioButton layoutX="245.0" layoutY="33.0" text="Female" toggleGroup="$gender">
+               <font>
+                  <Font name="Segoe UI Semibold" size="13.0" />
+               </font>
+            </MFXRadioButton>
+         </children>
+      </Pane>
+      <Label graphicTextGap="3.0" layoutX="456.0" layoutY="83.0" prefHeight="21.0" prefWidth="119.0" text="Add profile picture" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" graphicTextGap="3.0" layoutX="568.0" layoutY="77.0" minHeight="15.0" prefHeight="21.0" prefWidth="14.0" text="*" textAlignment="CENTER" textFill="#aa00ff" wrapText="true">
+         <font>
+            <Font name="Segoe UI Semibold" size="21.0" />
+         </font>
+      </Label>
+      <Label graphicTextGap="3.0" layoutX="459.0" layoutY="308.0" prefHeight="21.0" prefWidth="97.0" text="Or Select Avatar" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" graphicTextGap="3.0" layoutX="559.0" layoutY="304.0" minHeight="15.0" prefHeight="21.0" prefWidth="14.0" text="*" textAlignment="CENTER" textFill="#aa00ff" wrapText="true">
+         <font>
+            <Font name="Segoe UI Semibold" size="21.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

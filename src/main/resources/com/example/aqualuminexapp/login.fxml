@@ -12,10 +12,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="parentStackContainer" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.LoginController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="973.0" styleClass="login-background" stylesheets="@css/login.css">
+      <AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="973.0" styleClass="login-background" stylesheets="@css/login.css">
           <children>
               <ImageView disable="true" fitHeight="321.0" fitWidth="449.0" layoutX="286.0" layoutY="-145.0" preserveRatio="true">
                   <image>
@@ -104,7 +103,7 @@
                                               <Image url="@images/happy_48px.png" />
                                           </image>
                                       </ImageView>
-                                      <Label id="register-button" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" prefHeight="23.0" prefWidth="55.0" stylesheets="@css/login.css" text="Register" textAlignment="CENTER" textFill="#6f4eb9" wrapText="true">
+                                      <Label id="register-button" fx:id="registerButton" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" onMouseClicked="#registerUser" prefHeight="23.0" prefWidth="55.0" stylesheets="@css/login.css" text="Register" textAlignment="CENTER" textFill="#6f4eb9" wrapText="true">
                                           <font>
                                               <Font name="Segoe UI Semibold" size="14.0" />
                                           </font>

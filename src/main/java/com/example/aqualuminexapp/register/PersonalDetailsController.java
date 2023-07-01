@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UserDetailsController implements Initializable {
+public class PersonalDetailsController implements Initializable {
     public static AnchorPane userDetailsAnchorPanePublic;
     @FXML
     private AnchorPane userDetailsAnchorPane;
