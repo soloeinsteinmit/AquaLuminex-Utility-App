@@ -4,6 +4,7 @@ import com.example.aqualuminexapp.LoginController;
 import com.example.aqualuminexapp.utils.ChangingScenes;
 import com.example.aqualuminexapp.utils.ProgressBarAnimationBackward;
 import com.example.aqualuminexapp.utils.ProgressBarAnimationForward;
+import com.example.aqualuminexapp.utils.TimerClass;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
@@ -19,13 +20,13 @@ import java.util.ResourceBundle;
 
 public class RegisterMainController implements Initializable {
 
+    public static boolean isDone = false;
+    public static MFXButton nextBtn;
     ProgressBarAnimationForward progressBarAnimationForward1;
     ProgressBarAnimationForward progressBarAnimationForward2;
     ProgressBarAnimationBackward progressBarAnimationBackward1;
     ProgressBarAnimationBackward progressBarAnimationBackward2;
     ChangingScenes changingScenes = new ChangingScenes();
-
-
     @FXML
     private MFXButton nextButton;
 
@@ -55,11 +56,13 @@ public class RegisterMainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        nextBtn = nextButton;
         // initialize first scene
         changingScenes.initializeScene(PersonalDetailsController.class, registerTransitionContainerStack, "personal-details");
 
         next();
         previous();
+        doneImage.setVisible(false);
     }
 
     public void next() {
@@ -80,6 +83,15 @@ public class RegisterMainController implements Initializable {
 
                     previousButton.setVisible(true);
                     loginButton.setVisible(false);
+                    doneImage.setVisible(false);
+                    isDone = false; //checks if scene is at last password scene
+                    nextButton.setDisable(true);
+
+                    if (!AccountInfoController.staticTimerLabel.getText().equals("00:00")) {
+                        TimerClass.timeline.play();
+                    }
+
+
                 }
 
 
@@ -88,9 +100,12 @@ public class RegisterMainController implements Initializable {
 
                 if (!thread.isAlive()) {
                     ChangingScenes.translateScene(PasswordSecurityController.class, registerTransitionContainerStack,
-                            AccountInfoController.aP, "password-security", 'f');
+                            AccountInfoController.staticAccountInfoAnchorPane, "password-security", 'f');
 
                     nextButton.setText("Done");
+                    //doneImage.setVisible(true);
+                    isDone = true;
+                    TimerClass.timeline.stop();
                 }
             }
 
@@ -118,8 +133,12 @@ public class RegisterMainController implements Initializable {
                 thread = new Thread(progressBarAnimationBackward1);
                 if (!thread.isAlive()) {
                     ChangingScenes.translateScene(PersonalDetailsController.class, registerTransitionContainerStack,
-                            AccountInfoController.aP, "personal-details", 'b');
+                            AccountInfoController.staticAccountInfoAnchorPane, "personal-details", 'b');
+                    if (!AccountInfoController.staticTimerLabel.getText().equals("00:00")) {
+                        TimerClass.timeline.pause();
+                    }
 
+                    nextButton.setDisable(false);
                 }
 
             } else {
@@ -129,6 +148,8 @@ public class RegisterMainController implements Initializable {
                             PasswordSecurityController.pA, "account-info", 'b');
                     nextButton.setText("Next");
                     doneImage.setVisible(false);
+                    isDone = false;
+                    TimerClass.timeline.play();
                 }
             }
 //            System.out.println((int) progressBarStage1.getProgress() + " here");

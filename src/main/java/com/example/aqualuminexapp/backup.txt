@@ -1,3 +1,41 @@
+private void initializeTelephone() {
+    // Only allow digits and a maximum of 10 characters
+    UnaryOperator<TextFormatter.Change> wholeNumberFilter = change -> {
+        String newText = change.getControlNewText();
+
+        if (newText.matches("\\d*")) {
+            labelErrorMsgTelephone.setText("");
+            errorTelephoneImg.setVisible(false);
+
+            // Insert a space after every 3 characters
+            StringBuilder formattedText = new StringBuilder();
+            int len = newText.length();
+            for (int i = 0; i < len; i++) {
+                formattedText.append(newText.charAt(i));
+                if ((i + 1) % 3 == 0 && i != len - 1) {
+                    formattedText.append(" ");
+                }
+            }
+
+            change.setText(formattedText.toString());
+            return change;
+        } else {
+            labelErrorMsgTelephone.setText("Invalid Input - Whole Number");
+            errorTelephoneImg.setVisible(true);
+
+            if (newText.equals("")) {
+                errorTelephoneImg.setVisible(false);
+            }
+
+            return null;
+        }
+    };
+
+    TextFormatter<String> wholeNumberFormatter = new TextFormatter<>(wholeNumberFilter);
+    telephoneNumberField.setTextFormatter(wholeNumberFormatter);
+}
+
+
 package com.example.aqualuminexapp;
 
 import javafx.application.Application;

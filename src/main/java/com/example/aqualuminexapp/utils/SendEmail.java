@@ -18,6 +18,11 @@ public class SendEmail {
     private static String ID;
     private static Calendar calendar;
 
+    public SendEmail() {
+
+
+    }
+
 
     public static Boolean emailValidate(String email) {
         Pattern pattern = Pattern.compile(regex);
@@ -69,81 +74,104 @@ public class SendEmail {
     private static Message prepareMessage(Session session, String myAccountEmail, String recepient) {
         try {
             GenerateAccountId generateAccountId = new GenerateAccountId();
+            ID = generateAccountId.generateAccountId();
+            String name = "Jad Gogovi Wossop 😎😎😎";
+            System.out.println(getID() + " ID here");
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
             message.setSubject("AquaLuminex Account-ID Verification");
-            String html = "<!DOCTYPE html>\n" +
+            String sendMailHtml = "<!DOCTYPE html>\n" +
                     "<html lang=\"en\">\n" +
-                    "<head>\n" +
-                    "    <meta charset=\"UTF-8\">\n" +
-                    "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                    "    <title>Send Email</title>\n" +
-                    "</head>\n" +
-                    "<body>\n" +
-                    "    <div class=\"top\" style=\"margin-bottom: 50px;\">\n" +
-                    "        <img src=\"background.png\" alt=\"\"\n" +
-                    "        width=\"100%\" height=\"100\" \n" +
-                    "        style=\"\n" +
-                    "        position: relative;\" >\n" +
-                    "        \n" +
-                    "        \n" +
-                    "        <h2 style=\"color: white;\n" +
-                    "        position: absolute; left: 50px; top: 20px;\n" +
-                    "        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "        font-weight: 300;\n" +
-                    "        \">i<b style=\"font-size: 25px;\n" +
-                    "        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "       font-weight: 500;\n" +
-                    "       \">Manage</b>School</h2>\n" +
-                    "    </div>\n" +
+                    "	<head>\n" +
+                    "		<meta charset=\"UTF-8\" />\n" +
+                    "		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n" +
+                    "		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n" +
+                    "		<title>Send Email</title>\n" +
+                    "		<style>\n" +
+                    "			.top {\n" +
+                    "				margin-bottom: 50px;\n" +
+                    "			}\n" +
                     "\n" +
-                    "    <div class=\"middle\">\n" +
-                    "        <p style=\"font-size: 20px;\n" +
-                    "         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "        font-weight: 300;\n" +
-                    "        margin-left: 40px;\n" +
-                    "        \"\n" +
-                    "        > Hi <b style=\"font-size: 20px;\n" +
-                    "        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "       font-weight: 450;\n" +
-                    "       \"></b>,</p>\n" +
+                    "			.top img {\n" +
+                    "				width: 100%;\n" +
+                    "				height: 100px;\n" +
+                    "				position: relative;\n" +
+                    "			}\n" +
                     "\n" +
-                    "        <p style=\"font-size: 15px;\n" +
-                    "        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "       font-weight: 300;\n" +
-                    "       margin-left: 40px;\n" +
-                    "       \">Use the OTP to verify yout account. The OTP is valid for 15 minutes\n" +
-                    "       <b style=\"font-size: 15px;\n" +
-                    "       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "      font-weight: 500;\n" +
-                    "      \">" + generateAccountId.generateAccountId() + "</b>. <br> <br>OPT will expire on " + add15() + "<br>\n" +
-                    "      <br> Thanks for choosing us \n" +
-                    "        </p>\n" +
+                    "			.top h2 {\n" +
+                    "				color: white;\n" +
+                    "				position: absolute;\n" +
+                    "				left: 50px;\n" +
+                    "				top: 20px;\n" +
+                    "				font-family: \"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif;\n" +
+                    "				font-weight: 300;\n" +
+                    "			}\n" +
                     "\n" +
-                    "    </div>\n" +
+                    "			.middle p:first-child {\n" +
+                    "				font-size: 20px;\n" +
+                    "				font-family: \"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif;\n" +
+                    "				font-weight: 300;\n" +
+                    "				margin-left: 40px;\n" +
+                    "			}\n" +
                     "\n" +
-                    "    <div class=\"bottom\">\n" +
-                    "        <img src=\"pexels-sebastian-sørensen-750225.jpg\" width=\"100%\" height=\"100px\"  alt=\"\"\n" +
-                    "        style=\"margin-top: 50px;\n" +
-                    "        position: relative;\">\n" +
+                    "			.middle p:last-child {\n" +
+                    "				font-size: 15px;\n" +
+                    "				font-family: \"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif;\n" +
+                    "				font-weight: 300;\n" +
+                    "				margin-left: 40px;\n" +
+                    "			}\n" +
                     "\n" +
-                    "        <p\n" +
-                    "        style=\"color: rgb(130, 139, 139);\n" +
-                    "        font-size: 13px;\n" +
-                    "        position: absolute; left: 50px;top: 390px;\n" +
-                    "        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n" +
-                    "        font-weight: 100;\n" +
-                    "        \">Copyright &copy; 2022, iManageSchool and/or its affliate.\n" +
-                    "         All right reserved. <br> <br> <span\n" +
-                    "         style=\"color: rgb(216, 224, 224);\n" +
-                    "         font-weight: 500;\"> Terms of Use | Privacy</span> </p>\n" +
-                    "    </div>\n" +
-                    "</body>\n" +
-                    "</html>";
+                    "			.bottom img {\n" +
+                    "				width: 100%;\n" +
+                    "				height: 100px;\n" +
+                    "				margin-top: 50px;\n" +
+                    "				position: relative;\n" +
+                    "			}\n" +
+                    "\n" +
+                    "			.bottom p {\n" +
+                    "				color: rgb(130, 139, 139);\n" +
+                    "				font-size: 13px;\n" +
+                    "				position: absolute;\n" +
+                    "				left: 50px;\n" +
+                    "				top: 390px;\n" +
+                    "				font-family: \"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif;\n" +
+                    "				font-weight: 100;\n" +
+                    "			}\n" +
+                    "		</style>\n" +
+                    "	</head>\n" +
+                    "	<body>\n" +
+                    "		<div class=\"top\">\n" +
+                    "			<img src=\"https://images.pexels.com/photos/1184834/pexels-photo-1184834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" alt=\"\" />\n" +
+                    "			<h2><b>AquaLuminex</b></h2>\n" +
+                    "		</div>\n" +
+                    "\n" +
+                    "		<div class=\"middle\">\n" +
+                    "			<p>Hi <b>" + name + "</b>,</p>\n" +
+                    "			<p>\n" +
+                    "				Use the OTP to verify your account. The OTP is valid for 15\n" +
+                    "				minutes\n" +
+                    "				<b>" + getID() + "</b>. <br />\n" +
+                    "				<br />\n" +
+                    "				OTP will expire on " + add15() + "<br />\n" +
+                    "				<br />\n" +
+                    "				Thanks for choosing us\n" +
+                    "			</p>\n" +
+                    "		</div>\n" +
+                    "\n" +
+                    "		<div class=\"bottom\">\n" +
+                    "			<img src=\"https://images.pexels.com/photos/3183156/pexels-photo-3183156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\" alt=\"\" />\n" +
+                    "			<p>\n" +
+                    "				Copyright &copy; 2023, AquaLuminex and/or its affiliate. All\n" +
+                    "				rights reserved. <br />\n" +
+                    "				<br />\n" +
+                    "				<span>Terms of Use | Privacy</span>\n" +
+                    "			</p>\n" +
+                    "		</div>\n" +
+                    "	</body>\n" +
+                    "</html>\n";
 
-            message.setContent(html, "text/html");
+            message.setContent(sendMailHtml, "text/html");
             return message;
         } catch (Exception ex) {
             Logger.getLogger(JavaMailUtil.class.getName()).log(Level.SEVERE, null, ex);

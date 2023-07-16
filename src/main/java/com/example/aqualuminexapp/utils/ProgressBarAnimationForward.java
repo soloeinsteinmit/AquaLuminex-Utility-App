@@ -1,5 +1,6 @@
 package com.example.aqualuminexapp.utils;
 
+import com.example.aqualuminexapp.register.RegisterMainController;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import javafx.application.Platform;
 import javafx.scene.image.ImageView;
@@ -25,11 +26,9 @@ public class ProgressBarAnimationForward implements Runnable {
                 progress = Math.round((progressBar.getProgress() + 0.1) * 10.0) / 10.0;
                 progressBar.setProgress(progress);
                 progressBar.setPrefHeight(5);
-                if ((int) progressBar.getProgress() == 1) {
-
+                if ((int) progressBar.getProgress() == 1 && RegisterMainController.isDone) {
 //                    System.out.println("progress num = " + progressBar.getProgress());
                     doneImg.setVisible(true);
-
                 }
 //                progressBar.progressProperty().bind(progressBar.getProgress());
             });

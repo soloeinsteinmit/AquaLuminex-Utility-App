@@ -3,13 +3,15 @@ package com.example.aqualuminexapp.splashscreen;
 import javafx.concurrent.Task;
 
 public class ProgressBarCounterTask extends Task<Long> {
-    public static final long COUNT_LIMIT = 500000000L;
+    public static final long COUNT_LIMIT = 50000000L;
     public static boolean loadNewStage = false;
 
 
-//   public ProgressBarCounterTask(long progressCounter) {
-//        this.progressCounter = progressCounter;
-//    }
+/*
+    public ProgressBarCounterTask(long progressCounter) {
+        this.progressCounter = progressCounter;
+    }
+*/
 
     @Override
     protected Long call() throws Exception {

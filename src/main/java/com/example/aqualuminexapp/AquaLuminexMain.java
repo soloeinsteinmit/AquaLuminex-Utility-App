@@ -31,6 +31,7 @@ public class AquaLuminexMain extends Application implements Initializable {
 
     private static final URL[] sound = new URL[1];
     public static AtomicInteger getQuaterLoaderInt = new AtomicInteger();
+    public static Stage fileChooserStage;
     private static Stage pStage;
     int firstQuarter = (int) (ProgressBarCounterTask.COUNT_LIMIT / 3);
     //    public static final int COUNT_LIMIT = 500000;
@@ -58,12 +59,18 @@ public class AquaLuminexMain extends Application implements Initializable {
     public static void setRoot(Stage stage) throws IOException {
         Parent root = loadFXML("login");
 
+        fileChooserStage = stage;
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initStyle(StageStyle.DECORATED);
         pStage.close();
         stage.setResizable(false);
-        stage.show();
+
+        for (int i = 1; i <= 1; i++) {
+            stage.show();
+        }
+
 
     }
 
@@ -119,22 +126,10 @@ public class AquaLuminexMain extends Application implements Initializable {
         pt.play();
         clip.start();
         pt.setOnFinished(event -> {
-
-//            loadingMessage.setText("Almost There...");
-//            progressCounterLabel.setText("50.0%");
             FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), splashScreenParentContainer);
             fadeOut.setCycleCount(1);
             fadeOut.play();
 
-//            fadeOut.setOnFinished(e -> {
-//                  try {
-////                    progressCounterLabel.setText("100%");
-////                    loadingMessage.setText("Done");
-//                setRoot(new Stage());
-//            } catch (IOException ex) {
-//                ex.printStackTrace();
-//            }
-//            });
         });
 
 
@@ -174,16 +169,12 @@ public class AquaLuminexMain extends Application implements Initializable {
             if (controlCounterTask.isDone()) {
                 controlCounterTask.cancel();
                 try {
+
                     setRoot(new Stage());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
-
-//            if (ProgressBarCounterTask.loadNewStage) {
-//
-//
-//            }
 
         });
 

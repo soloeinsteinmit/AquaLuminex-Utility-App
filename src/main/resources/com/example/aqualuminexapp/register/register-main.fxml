@@ -3,6 +3,7 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
 <?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -45,8 +46,31 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></MFXButton>
-      <MFXButton fx:id="loginButton" layoutX="26.0" layoutY="580.0" onMouseClicked="#loginUser" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: #e1e1e1;" text="Have an Account? Login" visible="false" wrapText="true" />
-      <MFXButton fx:id="previousButton" layoutX="27.0" layoutY="580.0" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: #e1e1e1;" text="previous" wrapText="true" />
+      <MFXButton fx:id="loginButton" layoutX="15.0" layoutY="580.0" onMouseClicked="#loginUser" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: Transparent; -fx-text-fill: #6d56a1;" text="Have an Account? Login" visible="false" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" rotate="-45.0">
+               <image>
+                  <Image url="@../images/up_left_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font></MFXButton>
+      <MFXButton fx:id="previousButton" graphicTextGap="8.0" layoutX="16.0" layoutY="580.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: transparent; -fx-text-fill: #6d56a1;" text="Previous" textFill="#6d56a1" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" rotate="-45.0">
+               <image>
+                  <Image url="@../images/up_left_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font></MFXButton>
       <MFXProgressSpinner fx:id="progressSpinner" layoutX="880.0" layoutY="570.0" visible="false" />
       <Label layoutX="99.0" layoutY="34.0" text="1">
          <font>
