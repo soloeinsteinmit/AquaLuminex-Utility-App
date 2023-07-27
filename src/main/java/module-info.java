@@ -1,13 +1,13 @@
 module com.example.aqualuminexapp {
     requires javafx.fxml;
     requires org.slf4j;
-    requires multi.map;
+//    requires multi.map;
     requires mysql.connector.j;
     requires java.sql;
     requires com.jfoenix;
     requires MaterialFX;
     requires GNAvatarView;
-    requires de.jensd.fx.glyphs.fontawesome;
+//    requires de.jensd.fx.glyphs.fontawesome;
     requires VirtualizedFX;
     requires javax.mail.api;
     //requires java.mail;
@@ -15,6 +15,7 @@ module com.example.aqualuminexapp {
 
 
     exports com.example.aqualuminexapp;
+    
     opens com.example.aqualuminexapp to javafx.fxml, javafx.graphics;
 
     // utils package
