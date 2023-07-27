@@ -35,4 +35,23 @@ module com.example.aqualuminexapp {
     // opens images
     opens com.example.aqualuminexapp.images;
     opens com.example.aqualuminexapp.utils to javafx.fxml;
+
+    // meter package
+    exports com.example.aqualuminexapp.meter;
+    opens com.example.aqualuminexapp.meter to javafx.fxml;
+
+    // dashboard package
+    exports com.example.aqualuminexapp.dashboard;
+    opens com.example.aqualuminexapp.dashboard to javafx.fxml;
+
+
+    //  transactions package
+    exports com.example.aqualuminexapp.transactions;
+    opens com.example.aqualuminexapp.transactions to javafx.fxml;
+
+
+
+    // wallets package
+    exports com.example.aqualuminexapp.wallets;
+    opens com.example.aqualuminexapp.wallets to javafx.fxml;
 }
