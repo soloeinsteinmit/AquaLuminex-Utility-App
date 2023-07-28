@@ -11,9 +11,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <AnchorPane prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.40322494506836" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="11.0">
+            <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="23.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.403224945068359" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="7.0">
                <image>
                   <Image url="@../images/logo.png" />
                </image>
@@ -21,7 +21,7 @@
          </children></AnchorPane>
    </top>
    <center>
-      <TabPane id="tabPane" prefHeight="542.0" prefWidth="1006.0" rotateGraphic="true" side="LEFT" stylesheets="@../css/tabPaneStyleSheet.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane id="tabPane" prefHeight="542.0" prefWidth="1006.0" rotateGraphic="true" side="LEFT" style="-fx-background-color: #dddddd;" stylesheets="@../css/tabPaneStyleSheet.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab closable="false">
              <content>

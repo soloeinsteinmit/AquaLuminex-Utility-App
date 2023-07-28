@@ -38,6 +38,10 @@ public class AccountInfoController implements Initializable {
     @FXML
     private Label labelErrorMsg;
 
+    public static String userName;
+    public static String emailAddress;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,6 +49,8 @@ public class AccountInfoController implements Initializable {
         staticTimerLabel = timerLabel;
         initializeAccountIdValidation();
         labelErrorMsg.setText("");
+
+
     }
 
     @FXML
@@ -58,7 +64,10 @@ public class AccountInfoController implements Initializable {
         Thread sendEmailThread = new Thread(() -> {
             try {
 //                SendEmail.sendMail("jadgogovi@gmail.com");
-                SendEmail.sendMail("einsteinmit100@gmail.com");
+                SendEmail.sendMail(emailAddress);
+                System.out.println("account id email = " + emailAddress);
+                System.out.println("username = " + userName);
+//                SendEmail.sendMail("einsteinmit100@gmail.com");
 
 
             } catch (Exception e) {
@@ -122,4 +131,6 @@ public class AccountInfoController implements Initializable {
         TextFormatter<String> accountIdFormatter = new TextFormatter<>(accountIdRegExpFilter);
         accountIdTextField.setTextFormatter(accountIdFormatter);
     }
+
+
 }

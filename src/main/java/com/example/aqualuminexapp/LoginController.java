@@ -43,7 +43,10 @@ public class LoginController implements Initializable {
     }
     @FXML
     void loginUser(MouseEvent event) {
-        ChangingScenes.changeWindow(event, DashboardController.class,"dashboard");
+//        Thread changeWindowThread = new Thread(()-> {
+            ChangingScenes.changeWindow(event, DashboardController.class, "dashboard");
+//        });
+//        changeWindowThread.start();
     }
 
 }

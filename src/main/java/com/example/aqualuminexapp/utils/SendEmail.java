@@ -1,5 +1,7 @@
 package com.example.aqualuminexapp.utils;
 
+import com.example.aqualuminexapp.register.AccountInfoController;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -75,7 +77,11 @@ public class SendEmail {
         try {
             GenerateAccountId generateAccountId = new GenerateAccountId();
             ID = generateAccountId.generateAccountId();
+
+
             String name = "Jad Gogovi Wossop 😎😎😎";
+
+
             System.out.println(getID() + " ID here");
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
@@ -147,7 +153,7 @@ public class SendEmail {
                     "		</div>\n" +
                     "\n" +
                     "		<div class=\"middle\">\n" +
-                    "			<p>Hi <b>" + name + "</b>,</p>\n" +
+                    "			<p>Hi <b>" + AccountInfoController.userName + "</b>,</p>\n" +
                     "			<p>\n" +
                     "				Use the OTP to verify your account. The OTP is valid for 15\n" +
                     "				minutes\n" +

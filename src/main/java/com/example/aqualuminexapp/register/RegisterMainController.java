@@ -8,6 +8,7 @@ import com.example.aqualuminexapp.utils.TimerClass;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -54,6 +55,9 @@ public class RegisterMainController implements Initializable {
     @FXML
     private ImageView doneImage;
 
+    public static MFXTextField userName;
+    public static MFXTextField emailAddress;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         nextBtn = nextButton;
@@ -86,6 +90,12 @@ public class RegisterMainController implements Initializable {
                     doneImage.setVisible(false);
                     isDone = false; //checks if scene is at last password scene
                     nextButton.setDisable(true);
+
+                    // gets username and email and pass data to the AccountInfoController for email to be sent
+                    AccountInfoController.userName = userName.getText();
+                    AccountInfoController.emailAddress = emailAddress.getText();
+                    System.out.println("Name = " + AccountInfoController.userName + ", email = " + AccountInfoController.emailAddress);
+                    System.out.println("Register");
 
                     if (!AccountInfoController.staticTimerLabel.getText().equals("00:00")) {
                         TimerClass.timeline.play();

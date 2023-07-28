@@ -70,7 +70,7 @@ public class ChangingScenes {
      * <p><br>This method changes the window </p>
     * */
     public static void changeWindow(MouseEvent event,Class<?> className, String fxmlFileName) {
-//        Thread changeWindowThread = new Thread(()->{
+
             Parent root;
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(className.getResource(fxmlFileName + ".fxml")));
@@ -81,9 +81,6 @@ public class ChangingScenes {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-//        });
-//        changeWindowThread.start();
-
 
     }
 

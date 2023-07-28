@@ -64,6 +64,14 @@ public class AquaLuminexMain extends Application implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initStyle(StageStyle.DECORATED);
+
+        // Set the default app icon
+        String iconPath = "com/example/aqualuminexapp/images/logo_only.png"; // Replace 'icon.png' with your icon
+        // file path
+        stage.getIcons().add(new javafx.scene.image.Image(iconPath));
+        stage.setTitle("AquaLuminex Utility App");
+
+
         pStage.close();
         stage.setResizable(false);
 
@@ -106,8 +114,6 @@ public class AquaLuminexMain extends Application implements Initializable {
 
         sound[0] = getClass().getResource("intro.wav");
         invokeControlCounterTask();
-
-
         try {
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(sound[0]);
             clip = AudioSystem.getClip();
@@ -115,23 +121,26 @@ public class AquaLuminexMain extends Application implements Initializable {
         } catch (LineUnavailableException | IOException | UnsupportedAudioFileException e) {
             e.printStackTrace();
         }
+        Thread circlePath = new Thread(() ->{
 
-        Line line = new Line();
-        line.setStartX(-500);
-        line.setEndX(265);
-        PathTransition pt = new PathTransition();
-        pt.setNode(circle);
-        pt.setDuration(Duration.seconds(10));
-        pt.setPath(line);
-        pt.play();
-        clip.start();
-        pt.setOnFinished(event -> {
-            FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), splashScreenParentContainer);
-            fadeOut.setCycleCount(1);
-            fadeOut.play();
 
+            Line line = new Line();
+            line.setStartX(-500);
+            line.setEndX(265);
+            PathTransition pt = new PathTransition();
+            pt.setNode(circle);
+            pt.setDuration(Duration.seconds(10));
+            pt.setPath(line);
+            pt.play();
+            clip.start();
+            pt.setOnFinished(event -> {
+                FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), splashScreenParentContainer);
+                fadeOut.setCycleCount(1);
+                fadeOut.play();
+
+            });
         });
-
+        circlePath.start();
 
     }
 

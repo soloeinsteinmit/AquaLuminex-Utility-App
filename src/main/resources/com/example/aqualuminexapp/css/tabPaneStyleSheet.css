@@ -38,6 +38,7 @@
     -fx-background-insets: 0.0;
     -fx-background-radius: 0.0;
     -fx-alignment: center;
+    -fx-background-color: transparent;
 
     -fx-padding: 0 20px 0 0;
 }
@@ -60,8 +61,8 @@
 }
 
 .tab-pane *.tab-header-background{
-    /*-fx-background-color: #DDDDDD;*/
-    -fx-background-color: #fff;
+    -fx-background-color: #DDDDDD;
+    /*-fx-background-color: #fff;*/
 }
 
 

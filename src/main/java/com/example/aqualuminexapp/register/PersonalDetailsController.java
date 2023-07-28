@@ -17,6 +17,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -76,10 +77,14 @@ public class PersonalDetailsController implements Initializable {
     private MFXTextField telephoneNumberField;
     @FXML
     private MFXTextField userNameField;
+    @FXML
+    private GridPane avatarGridPane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userDetailsAnchorPanePublic = userDetailsAnchorPane;
+        RegisterMainController.userName = userNameField;
+        RegisterMainController.emailAddress = emailField;
 
         // initialize email validation checker
         initializeEmailValidation();
@@ -92,6 +97,11 @@ public class PersonalDetailsController implements Initializable {
 
         labelErrorMsg.setText(""); // set initial error to an empty string
         labelErrorMsgTelephone.setText("");
+
+        // set avatar images
+        setAvatarImages();
+//        Thread setAvatarImagesThread = new Thread(this::setAvatarImages);
+//        setAvatarImagesThread.start();
     }
 
     @FXML
@@ -351,5 +361,30 @@ public class PersonalDetailsController implements Initializable {
 
     }
 
+    private void setAvatarImages(){
+        // Create ImageViews and add images to them
+        ImageView[] imageViews = new ImageView[8];
+        for (int i = 0; i < 8; i++) {
+//            Image image = new Image("file:images/avatar" + (i + 1) + ".png");
+            Image image = new Image("com/example/aqualuminexapp/images/avatar"+(i + 1)+".png");
+            imageViews[i] = new ImageView(image);
+            imageViews[i].setFitWidth(40);
+            imageViews[i].setFitHeight(40);
 
+            // Set event handler for each ImageView
+            int finalI = i;
+            imageViews[i].setOnMouseClicked(event -> {
+                // Set the clicked image as the profile image for all ImageViews
+//                for (ImageView imageView : imageViews) {
+//                    imageView.setImage(imageViews[finalI].getImage());
+//                }
+                profileImageField.setImage(imageViews[finalI].getImage());
+                browseLabel.setVisible(false);
+                addImageButton.setVisible(false);
+                normalLabel.setVisible(false);
+            });
+
+            avatarGridPane.add(imageViews[i], i % 4, i / 4);
+        }
+    }
 }

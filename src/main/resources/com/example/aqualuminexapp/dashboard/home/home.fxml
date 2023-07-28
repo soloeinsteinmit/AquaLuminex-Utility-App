@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
-<?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #dddddd; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.home.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" stylesheets="@../../css/dashboard/home.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.home.HomeController">
    <children>
-      <AreaChart layoutX="16.0" layoutY="22.0" prefHeight="205.0" prefWidth="500.0">
-         <xAxis>
-            <CategoryAxis side="BOTTOM" />
-         </xAxis>
-         <yAxis>
-            <NumberAxis side="LEFT" />
-         </yAxis>
-      </AreaChart>
-      <StackedAreaChart layoutX="24.0" layoutY="245.0" prefHeight="270.0" prefWidth="500.0">
-         <xAxis>
-            <NumberAxis side="BOTTOM" />
-         </xAxis>
-         <yAxis>
-            <NumberAxis side="LEFT" />
-         </yAxis>
-      </StackedAreaChart>
-      <LineChart layoutX="563.0" layoutY="31.0" prefHeight="239.0" prefWidth="254.0">
+      <LineChart fx:id="lineChart" alternativeColumnFillVisible="true" layoutX="27.0" layoutY="47.0" prefHeight="435.0" prefWidth="582.0" stylesheets="@../../css/dashboard/home.css">
          <xAxis>
             <CategoryAxis side="BOTTOM" />
          </xAxis>
@@ -34,6 +18,17 @@
             <NumberAxis side="LEFT" />
          </yAxis>
       </LineChart>
-      <MFXProgressSpinner layoutX="563.0" layoutY="319.0" prefHeight="152.0" prefWidth="150.0" progress="0.71" style="-fx-font-size: 40;" />
+      <MFXProgressSpinner fx:id="electricityProgressSpinner" layoutX="634.0" layoutY="54.0" prefHeight="152.0" prefWidth="150.0" progress="0.26" style="-fx-font-size: 40;" styleClass="water_progress_spinner" />
+      <MFXProgressSpinner fx:id="waterProgressSpinner" layoutX="634.0" layoutY="264.0" prefHeight="152.0" prefWidth="150.0" progress="0.54" style="-fx-font-size: 40;" styleClass="electricity_progress_spinner" />
+      <Label layoutX="663.0" layoutY="206.0" text="Water meter">
+         <font>
+            <Font name="Segoe UI Semibold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="650.0" layoutY="420.0" text="Electricity meter">
+         <font>
+            <Font name="Segoe UI Semibold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

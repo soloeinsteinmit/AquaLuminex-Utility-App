@@ -1,0 +1,65 @@
+/* =======================================================
+    Progress bar style
+======================================================= */
+.mfx-progress-spinner:determinate .arc {
+
+    /*-fx-stroke: #6F4EB9;*/
+    -fx-fill: #f1f1f1;
+
+    -fx-stroke-width: 12px;
+
+}
+.water_progress_spinner:determinate .arc {
+    -fx-stroke: #6F4EB9;
+}
+.electricity_progress_spinner:determinate .arc {
+    -fx-stroke: #DE4545;
+}
+
+.mfx-progress-spinner .percentage {
+    -fx-font-family: "Open Sans SemiBold";
+    -fx-font-smoothing-type: gray;
+    -fx-text-fill: -mfx-text-he;
+}
+
+.mfx-progress-spinner:determinate .percentage {
+    -fx-fill: #4d4d4d;
+    -fx-font-size: 40px;
+}
+
+.mfx-progress-spinner:disabled .arc {
+    visibility: hidden;
+}
+
+.mfx-progress-spinner:disabled .track {
+    -fx-stroke: #bcbcbc;
+}
+
+/* ======================================
+    line chart
+==================================*/
+/* Water */
+/* Change the color of the line in the LineChart */
+.chart-series-line0  {
+    -fx-stroke: #6F4EB9; /* Replace #FF0000 with your desired color code */
+}
+
+
+.chart-legend-item0-symbol {
+    -fx-background-color: #6F4EB9; /* Replace #00FF00 with your desired color code for legend symbols */
+}
+
+/* Electricity */
+/* Change the color of the line in the LineChart */
+.chart-series-line1 {
+    -fx-stroke: #DE4545; /* Replace #FF0000 with your desired color code */
+}
+
+/* Change the color of the legend text and symbols */
+.chart-legend {
+    -fx-text-fill: #000; /* Replace #0000FF with your desired color code for legend text */
+}
+
+.chart-legend-item1-symbol {
+    -fx-background-color: #DE4545; /* Replace #00FF00 with your desired color code for legend symbols */
+}

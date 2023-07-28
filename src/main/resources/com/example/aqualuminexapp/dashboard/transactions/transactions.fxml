@@ -9,7 +9,10 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.transactions.TransactionsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.transactions.TransactionsController">
+
+
+
    <children>
       <Arc fill="#6c4cb4" layoutX="478.0" layoutY="236.0" length="180.0" radiusX="174.0" radiusY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
       <Arc fill="#f3f3f3" layoutX="478.0" layoutY="240.0" length="180.0" radiusX="90.0" radiusY="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
