@@ -1,213 +1,517 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.transactions.TransactionsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.transactions.TransactionsController">
 
 
 
    <children>
-      <Arc fill="#6c4cb4" layoutX="478.0" layoutY="236.0" length="180.0" radiusX="174.0" radiusY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
-      <Arc fill="#f3f3f3" layoutX="478.0" layoutY="240.0" length="180.0" radiusX="90.0" radiusY="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="81.0" layoutX="60.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="837.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="81.0" layoutX="59.0" layoutY="345.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="837.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="81.0" layoutX="60.0" layoutY="439.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="837.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d9d9d9" height="81.0" layoutX="60.0" layoutY="532.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="837.0" />
-      <Label layoutX="457.0" layoutY="156.0" prefHeight="31.0" prefWidth="42.0" text="GHC" textFill="#9a9a9a">
+      <Group layoutX="425.0" layoutY="151.0">
+         <children>
+            <Arc fill="#6c4cb4" length="180.0" radiusX="147.0" radiusY="130.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <Arc fill="WHITE" layoutY="1.0" length="180.0" radiusX="91.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+            <VBox alignment="CENTER" layoutX="-54.0" layoutY="-63.0">
+               <children>
+                  <Label alignment="CENTER" text="GHC" textFill="#9a9a9a">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="101.0" text="5000.90" textAlignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Group>
+      <Label alignment="CENTER" layoutX="378.0" layoutY="139.0" text="Total Spent" textAlignment="CENTER" textFill="#6f6b6b" wrapText="true">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
+            <Font name="Segoe UI Semibold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="428.0" layoutY="180.0" prefHeight="41.0" prefWidth="101.0" text="5000.90">
+      <HBox alignment="CENTER" layoutX="152.0" layoutY="90.0" prefHeight="31.0" prefWidth="84.0" spacing="8.0">
+         <children>
+            <Circle fill="#6c4cb4" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label prefHeight="31.0" prefWidth="101.0" text="Meter">
+               <font>
+                  <Font name="Segoe UI Semibold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="697.0" layoutY="66.0" prefHeight="41.0" prefWidth="101.0" text="Electricity">
          <font>
-            <Font name="Arial Rounded MT Bold" size="25.0" />
+            <Font name="Segoe UI Semibold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="428.0" layoutY="217.0" prefHeight="31.0" prefWidth="101.0" text="Total Spent" textFill="#6f6b6b">
+      <Label layoutX="697.0" layoutY="110.0" prefHeight="41.0" prefWidth="101.0" text="Water">
          <font>
-            <Font name="Arial Rounded MT Bold" size="17.0" />
+            <Font name="Segoe UI Semibold" size="20.0" />
          </font>
       </Label>
-      <Circle fill="#6c4cb4" layoutX="154.0" layoutY="141.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Label layoutX="177.0" layoutY="118.0" prefHeight="41.0" prefWidth="101.0" text="Meter">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="713.0" layoutY="121.0" prefHeight="41.0" prefWidth="101.0" text="Electricity">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="713.0" layoutY="159.0" prefHeight="41.0" prefWidth="101.0" text="Water">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="294.0" prefHeight="25.0" prefWidth="129.0" text="January 03 2023" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="386.0" prefHeight="25.0" prefWidth="129.0" text="March 13 2023" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="480.0" prefHeight="25.0" prefWidth="129.0" text="January 27 2023" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="573.0" prefHeight="25.0" prefWidth="129.0" text="February 10 2023" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Circle fill="#434546" layoutX="274.0" layoutY="307.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#414243" layoutX="274.0" layoutY="399.0" radius="4.0" stroke="#4a4848" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#404243" layoutX="274.0" layoutY="493.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#282a2c" layoutX="274.0" layoutY="586.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Label layoutX="291.0" layoutY="295.0" prefHeight="25.0" prefWidth="67.0" text="7:20 AM" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="291.0" layoutY="386.0" prefHeight="25.0" prefWidth="67.0" text="6:20 PM" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="291.0" layoutY="480.0" prefHeight="25.0" prefWidth="67.0" text="1:34 PM" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="291.0" layoutY="574.0" prefHeight="25.0" prefWidth="67.0" text="9:15 AM" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="400.0" layoutY="294.0" prefHeight="25.0" prefWidth="329.0" text="AQ Number: 9999999999" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="400.0" layoutY="391.0" prefHeight="25.0" prefWidth="329.0" text="AQ Number: 2497652019" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="404.0" layoutY="480.0" prefHeight="25.0" prefWidth="329.0" text="AQ Number: 5567811209" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="400.0" layoutY="574.0" prefHeight="25.0" prefWidth="329.0" text="AQ Number: 00098112360" textFill="#8a8484">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="722.0" layoutY="278.0" prefHeight="25.0" prefWidth="113.0" text="GHC 200.00">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="722.0" layoutY="373.0" prefHeight="25.0" prefWidth="113.0" text="GHC 150.00">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="722.0" layoutY="467.0" prefHeight="25.0" prefWidth="129.0" text="GHC 1000.00">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="722.0" layoutY="560.0" prefHeight="25.0" prefWidth="129.0" text="GHC 1000.00">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="264.0" prefHeight="25.0" prefWidth="147.0" text="Adjei House">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="359.0" prefHeight="25.0" prefWidth="147.0" text="Adjei House">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="454.0" prefHeight="25.0" prefWidth="147.0" text="Hagar House">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="132.0" layoutY="547.0" prefHeight="25.0" prefWidth="147.0" text="Hagar House">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="851.0" layoutY="560.0">
-         <image>
-            <Image url="@../../images/electricity_96px%202.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="851.0" layoutY="277.0">
-         <image>
-            <Image url="@../../images/electricity_96px%202.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="843.0" layoutY="372.0" x="8.0">
-         <image>
-            <Image url="@../../images/correct.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="843.0" layoutY="462.0" x="8.0">
-         <image>
-            <Image url="@../../images/correct.png" />
-         </image>
-      </ImageView>
-      <Circle fill="#eaeaea" layoutX="102.0" layoutY="293.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#eaeaea" layoutX="102.0" layoutY="386.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#eaeaea" layoutX="102.0" layoutY="481.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="#eaeaea" layoutX="102.0" layoutY="574.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="89.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/electric.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="89.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/electric.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="89.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="667.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/electricity.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="89.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/electricity.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="683.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/electricity.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="683.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="667.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/electric.png" />
          </image>
       </ImageView>
+      <MFXScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="161.0" prefHeight="351.0" prefWidth="821.0">
+         <content>
+            <VBox alignment="TOP_CENTER" prefHeight="356.0" prefWidth="821.0" spacing="4.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electric.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/electricity_96px%202.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electric.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/correct.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="69.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electricity.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/correct.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electricity.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/electricity_96px%202.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electric.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/correct.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="246.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electricity.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/electricity_96px%202.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="305.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electric.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/electricity_96px%202.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="364.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electric.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/electricity_96px%202.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="31.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;">
+                     <children>
+                        <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electric.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+                           <image>
+                              <Image url="@../../images/electricity_96px%202.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+                           <children>
+                              <Label text="Adjei House" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="January 03 2023" textFill="#8a8484">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </content>
+      </MFXScrollPane>
    </children>
 </AnchorPane>

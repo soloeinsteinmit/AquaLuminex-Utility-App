@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<!--        fx:controller="com.example.aqualuminexapp.dashboard.transactions.TransactionCard"-->
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="780.0" style="-fx-background-radius: 10; -fx-background-color: #d1d1d1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="21.0" layoutY="13.0" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" AnchorPane.leftAnchor="21.0">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/electric.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+         <image>
+            <Image url="@../../images/electricity_96px%202.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+         <children>
+            <Label text="Adjei House" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+            </Label>
+            <Label text="January 03 2023" textFill="#8a8484">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
+         <font>
+            <Font name="Segoe UI Semibold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
+         <font>
+            <Font name="Segoe UI Semibold" size="12.0" />
+         </font>
+      </Label>
+      <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
