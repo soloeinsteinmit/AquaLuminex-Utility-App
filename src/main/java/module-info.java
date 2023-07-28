@@ -12,6 +12,7 @@ module com.example.aqualuminexapp {
     requires javax.mail.api;
     //requires java.mail;
     requires TrayTester;
+    requires com.google.gson;
 
 
     exports com.example.aqualuminexapp;
@@ -37,8 +38,8 @@ module com.example.aqualuminexapp {
     opens com.example.aqualuminexapp.utils to javafx.fxml;
 
     // meter package
-    exports com.example.aqualuminexapp.meter;
-    opens com.example.aqualuminexapp.meter to javafx.fxml;
+    exports com.example.aqualuminexapp.dashboard.meter;
+    opens com.example.aqualuminexapp.dashboard.meter to javafx.fxml;
 
     // dashboard package
     exports com.example.aqualuminexapp.dashboard;
@@ -46,12 +47,16 @@ module com.example.aqualuminexapp {
 
 
     //  transactions package
-    exports com.example.aqualuminexapp.transactions;
-    opens com.example.aqualuminexapp.transactions to javafx.fxml;
+    exports com.example.aqualuminexapp.dashboard.transactions;
+    opens com.example.aqualuminexapp.dashboard.transactions to javafx.fxml;
 
 
 
     // wallets package
-    exports com.example.aqualuminexapp.wallets;
-    opens com.example.aqualuminexapp.wallets to javafx.fxml;
+    exports com.example.aqualuminexapp.dashboard.wallets;
+    opens com.example.aqualuminexapp.dashboard.wallets to javafx.fxml;
+
+    // home package
+    exports com.example.aqualuminexapp.dashboard.home;
+    opens com.example.aqualuminexapp.dashboard.home to javafx.fxml;
 }

@@ -26,7 +26,7 @@ public class ChangingScenes {
      * @param parentContainer container where transitions happens.
      * @param container       content to be changed.
      * @param filename        the name of the fxml file you want to change
-     * @param direction       the transition direction weather front or back
+     * @param direction       the transition direction weather front(f) or back(b)
      * @code for making transitions in the application
      */
     public static void translateScene(Class<?> className, StackPane parentContainer, AnchorPane container,
@@ -51,6 +51,7 @@ public class ChangingScenes {
             fxmlName.translateXProperty().set(container.getWidth());
         }
 
+
         Timeline timeline = new Timeline();
         KeyValue kv = new KeyValue(fxmlName.translateXProperty(), 0, Interpolator.EASE_IN);
         KeyFrame kf = new KeyFrame(Duration.seconds(0.3), kv);
@@ -61,12 +62,28 @@ public class ChangingScenes {
 
     }
 
-    public static void changeWindow(MouseEvent event, String fxmlFileName) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(ChangingScenes.class.getResource(fxmlFileName + ".fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    /**
+     * @param event the mouse event that results in the changing of the scnene
+     * @param className the name of the class you are changing the window to
+     * @param fxmlFileName the name of the fxml file you are changing to
+     *
+     * <p><br>This method changes the window </p>
+    * */
+    public static void changeWindow(MouseEvent event,Class<?> className, String fxmlFileName) {
+//        Thread changeWindowThread = new Thread(()->{
+            Parent root;
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(className.getResource(fxmlFileName + ".fxml")));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+//        });
+//        changeWindowThread.start();
+
 
     }
 

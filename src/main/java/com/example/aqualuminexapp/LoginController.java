@@ -1,5 +1,6 @@
 package com.example.aqualuminexapp;
 
+import com.example.aqualuminexapp.dashboard.DashboardController;
 import com.example.aqualuminexapp.register.RegisterMainController;
 import com.example.aqualuminexapp.utils.ChangingScenes;
 import javafx.fxml.FXML;
@@ -39,6 +40,10 @@ public class LoginController implements Initializable {
     void registerUser(MouseEvent event) {
         ChangingScenes.translateScene(RegisterMainController.class, parentStackContainer, loginAnchorPane,
                 "register-main", 'f');
+    }
+    @FXML
+    void loginUser(MouseEvent event) {
+        ChangingScenes.changeWindow(event, DashboardController.class,"dashboard");
     }
 
 }

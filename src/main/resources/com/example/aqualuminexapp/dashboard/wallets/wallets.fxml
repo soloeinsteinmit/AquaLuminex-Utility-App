@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #dddddd; -fx-background-radius: 20; -fx-padding: 0 10 100 0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.wallets.WalletsController">
+   <children>
+      <Label layoutX="376.0" layoutY="232.0" prefHeight="49.0" prefWidth="228.0" text="Wallet" wrapText="true">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

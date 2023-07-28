@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.aqualuminexapp.dashboard.DashboardController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.40322494506836" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="11.0">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </top>
+   <center>
+      <TabPane id="tabPane" prefHeight="542.0" prefWidth="1006.0" rotateGraphic="true" side="LEFT" stylesheets="@../css/tabPaneStyleSheet.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab closable="false">
+             <content>
+                <fx:include source="home/home.fxml" />
+             </content>
 
-</AnchorPane>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/home.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Home" />
+                     </children>
+                  </HBox>
+               </graphic>
+          </Tab>
+            <Tab closable="false">
+               <content>
+                  <fx:include source="meter/meter.fxml" />
+               </content>
+<!--               <content>-->
+<!--                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="841.0" style="-fx-background-color: navy;" />-->
+<!--               </content>-->
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/meter.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Meter" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab closable="false">
+               <content>
+                  <fx:include source="transactions/transactions.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/transactions.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Transactions" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab closable="false">
+               <content>
+                  <fx:include source="wallets/wallets.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/wallets.png" />
+                           </image>
+                        </ImageView>
+                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Wallets" />
+                     </children>
+                  </HBox>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

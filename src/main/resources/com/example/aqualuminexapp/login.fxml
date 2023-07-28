@@ -72,7 +72,7 @@
                                       <Insets />
                                   </opaqueInsets>
                               </MFXTextField>
-                              <MFXButton id="login-button" accessibleRole="BUTTON" layoutX="40.0" layoutY="308.0" prefHeight="40.0" prefWidth="305.0" stylesheets="@css/login.css" text="Login now" textFill="WHITE">
+                              <MFXButton id="login-button" accessibleRole="BUTTON" layoutX="40.0" layoutY="308.0" onMouseClicked="#loginUser" prefHeight="40.0" prefWidth="305.0" stylesheets="@css/login.css" text="Login now" textFill="WHITE">
                                   <font>
                                       <Font name="Segoe UI Semibold" size="13.0" />
                                   </font>
