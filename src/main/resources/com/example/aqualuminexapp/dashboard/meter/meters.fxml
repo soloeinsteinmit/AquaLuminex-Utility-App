@@ -50,11 +50,15 @@
             </Label>
             <Label layoutX="24.0" layoutY="47.0" text="Q1234567" textFill="WHITE" />
             <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="119.0" layoutY="132.0" style="-fx-background-color: transparent;" />
-            <ImageView fitHeight="36.0" fitWidth="28.0" layoutX="122.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/del.png" />
-               </image>
-            </ImageView>
+            <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="121.0" layoutY="143.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/del.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="362.0" layoutY="27.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
