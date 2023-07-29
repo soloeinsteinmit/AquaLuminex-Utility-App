@@ -1,43 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Rectangle2D?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Line endX="604.0" endY="-0.5" layoutX="218.0" layoutY="262.0" startX="-216.0" startY="-0.5" stroke="#00000042" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="31.1">
-         <image>
-            <Image url="@Group%2017.png" />
-         </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="397.27" y="40.0">
-         <image>
-            <Image url="@Group%2041%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="198.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-21.0" pickOnBounds="true" preserveRatio="true" x="200.0" y="31.1">
-         <image>
-            <Image url="@Group%2017.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
-         <image>
-            <Image url="@water.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="210.0" y="340.0">
-         <image>
-            <Image url="@Group%2040.png" />
-         </image>
-      </ImageView>
+      <AnchorPane layoutX="2.0" layoutY="27.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+               <image>
+                  <Image url="@../../images/card1.png" />
+               </image>
+            </ImageView>
+            <MFXButton layoutX="23.0" layoutY="150.0" text="Buy Credit" />
+            <Label layoutX="23.0" layoutY="36.0" text="Adjei House">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="63.0" text="P1234567" textFill="WHITE" />
+            <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="111.0" layoutY="145.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/del.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="182.0" layoutY="27.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+               <image>
+                  <Image url="@../../images/postpaid.png" />
+               </image>
+            </ImageView>
+            <MFXButton layoutX="24.0" layoutY="141.0" text="Pay Bill" />
+            <Label layoutX="24.0" layoutY="20.0" text="myHouse">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="47.0" text="Q1234567" textFill="WHITE" />
+            <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="119.0" layoutY="132.0" style="-fx-background-color: transparent;" />
+            <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="121.0" layoutY="143.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/del.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="362.0" layoutY="27.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+               <image>
+                  <Image url="@../../images/add%20prepaid.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="34.0" layoutY="36.0" text="Add prepaid meter" textFill="WHITE" />
+            <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="146.0" style="-fx-background-color: transaction;">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="542.0" layoutY="27.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+               <image>
+                  <Image url="@../../images/add%20postpaid.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="28.0" layoutY="37.0" text="Add postpaid meter" textFill="WHITE" />
+            <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="116.0" layoutY="135.0" style="-fx-background-color: transaction;" />
+            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="129.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Plus.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="14.0" layoutY="297.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="172.0">
+               <children>
+                  <ImageView fitHeight="185.0" fitWidth="181.0" layoutX="-48.0" layoutY="-340.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
+                     <image>
+                        <Image url="@../../images/water.png" />
+                     </image>
+                  </ImageView>
+                  <MFXButton layoutX="14.0" layoutY="138.0" text="Pay Bill" />
+                  <Label layoutX="14.0" layoutY="30.0" text="FHouse Meter">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="67.0" prefHeight="19.0" prefWidth="140.0" text="1001-0110-1001-1110">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="36.0" fitWidth="28.0" layoutX="127.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/del.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="172.0">
+               <children>
+                  <ImageView fitHeight="185.0" fitWidth="181.0" layoutX="-48.0" layoutY="-340.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
+                     <image>
+                        <Image url="@../../images/add%20water%20meter.png" />
+                     </image>
+                  </ImageView>
+                  <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="52.0" layoutY="70.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/+.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
