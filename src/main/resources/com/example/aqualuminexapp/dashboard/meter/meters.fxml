@@ -1,43 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Rectangle2D?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.HBox?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Line endX="604.0" endY="-0.5" layoutX="218.0" layoutY="262.0" startX="-216.0" startY="-0.5" stroke="#00000042" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="31.1">
-         <image>
-            <Image url="@Group%2017.png" />
-         </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="397.27" y="40.0">
-         <image>
-            <Image url="@Group%2041%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="198.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-21.0" pickOnBounds="true" preserveRatio="true" x="200.0" y="31.1">
-         <image>
-            <Image url="@Group%2017.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
-         <image>
-            <Image url="@water.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" x="210.0" y="340.0">
-         <image>
-            <Image url="@Group%2040.png" />
-         </image>
-      </ImageView>
+      <HBox layoutX="2.0" layoutY="27.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+               <children>
+                  <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                     <image>
+                        <Image url="@../../images/card1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="28.0" layoutX="126.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/del.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+               <children>
+                  <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                     <image>
+                        <Image url="@../../images/postpaid.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="190.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+               <children>
+                  <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                     <image>
+                        <Image url="@../../images/add%20prepaid.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="370.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+               <children>
+                  <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                     <image>
+                        <Image url="@../../images/add%20postpaid.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="20.0" layoutY="287.0">
+         <children>
+            <ImageView fitHeight="185.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
+               <image>
+                  <Image url="@../../images/water.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="185.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/add%20water%20meter.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="246.0" layoutY="350.0" prefHeight="59.0" prefWidth="65.0" style="-fx-background-color: transparent;" text="Button">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/+.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </MFXButton>
    </children>
 </AnchorPane>
