@@ -29,7 +29,7 @@
                   <Font name="Segoe UI Semibold" size="14.0" />
                </font>
             </Text>
-            <Label prefHeight="16.0" prefWidth="246.0" text="Pay your bills" textAlignment="CENTER" textFill="#130bae">
+            <Label prefHeight="16.0" prefWidth="246.0" text="Pay Bills :  GHS 250" textFill="#130bae">
                <font>
                   <Font name="Segoe UI Semibold" size="20.0" />
                </font>
@@ -129,7 +129,7 @@
                               </Text>
                            </children>
                         </VBox>
-                        <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="147.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button">
+                        <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="138.0" layoutY="142.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -166,7 +166,7 @@
                               </Text>
                            </children>
                         </VBox>
-                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="144.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="142.0" layoutY="140.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
                            <graphic>
                               <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -203,7 +203,7 @@
                               </Text>
                            </children>
                         </VBox>
-                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="144.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="137.0" layoutY="141.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
                            <graphic>
                               <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -242,11 +242,20 @@
             <Font name="Segoe UI Semibold" size="16.0" />
          </font>
       </MFXButton>
-      <MFXRadioButton layoutX="441.0" layoutY="156.0" text="Post paid" textFill="#6b0e94">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </MFXRadioButton>
-      <MFXRadioButton layoutX="578.0" layoutY="157.0" text="Water" textFill="#883bc3" />
+      <HBox layoutX="480.0" layoutY="156.0" spacing="20.0">
+         <children>
+            <MFXRadioButton text="Water bill " textFill="#883bc3" />
+            <MFXRadioButton text="Post paid bill" textFill="#6b0e94">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </MFXRadioButton>
+         </children>
+      </HBox>
+      <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="751.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/waterdroplet.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
