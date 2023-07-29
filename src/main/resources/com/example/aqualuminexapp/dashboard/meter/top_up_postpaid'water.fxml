@@ -239,5 +239,10 @@
             </MFXTextField>
          </children>
       </HBox>
+      <Label layoutX="85.0" layoutY="179.0" text="Pay water bill" textFill="#6f4ea3">
+         <font>
+            <Font name="Lucida Bright Demibold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
