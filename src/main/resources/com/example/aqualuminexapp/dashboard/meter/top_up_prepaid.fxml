@@ -16,30 +16,23 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fill="#fcf8f8" layoutX="361.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" TOP UP" wrappingWidth="80.13671874999989" />
-      <Text layoutX="14.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" text="Choose payment method" wrappingWidth="189.13671875">
-         <font>
-            <Font name="Segoe UI Bold" size="18.0" />
-         </font></Text>
-      <Text layoutX="83.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available balance: GHS 32.90" wrappingWidth="189.13671875">
-         <font>
-            <Font name="Segoe UI Semibold" size="14.0" />
-         </font></Text>
-      <Text fill="#130bae" layoutX="72.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font: 14;" text="Top up your prepaid meter" wrappingWidth="201.13671875">
-         <font>
-            <Font name="Segoe UI Semibold" size="13.0" />
-         </font></Text>
-      <VBox layoutX="282.0" layoutY="153.0">
+      <VBox alignment="CENTER" layoutX="85.0" layoutY="32.0" spacing="5.0">
          <children>
-            <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="Vodafone Cash" wrappingWidth="98.0">
+            <ImageView fitHeight="126.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Credit.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Available balance: GHS 32.90" wrappingWidth="189.13671875">
                <font>
-                  <Font size="7.0" />
+                  <Font name="Segoe UI Semibold" size="14.0" />
                </font>
             </Text>
-            <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="GHC 50.00" wrappingWidth="80.13671874999989">
+            <Label prefHeight="16.0" prefWidth="246.0" text="Top up your prepaid meter" textFill="#130bae">
                <font>
-                  <Font size="7.0" />
+                  <Font name="Segoe UI Semibold" size="20.0" />
                </font>
-            </Text>
+            </Label>
          </children>
       </VBox>
       <MFXButton layoutX="663.0" layoutY="468.0" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: tranparent; -fx-border-color: #000; -fx-border-radius: 20; -fx-background-radius: 20;" text="Cancel">
@@ -87,7 +80,7 @@
             <Image url="@../../images/electricity.png" />
          </image>
       </ImageView>
-      <ScrollPane hbarPolicy="ALWAYS" layoutX="14.0" layoutY="262.0" prefHeight="203.0" prefWidth="795.0" vbarPolicy="NEVER">
+      <ScrollPane layoutX="17.0" layoutY="262.0" prefHeight="198.0" prefWidth="790.0">
          <content>
             <HBox prefHeight="188.0" prefWidth="949.0">
                <children>
@@ -105,7 +98,7 @@
                                     <Font name="Segoe UI Semibold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#4c36b2" strokeType="OUTSIDE" strokeWidth="0.0" text="GHC 300.00" wrappingWidth="80.13671874999989">
+                              <Text fill="#4c36b2" strokeType="OUTSIDE" strokeWidth="0.0" text="GHC 00.00" wrappingWidth="80.13671874999989">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
@@ -133,18 +126,27 @@
                         </ImageView>
                         <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adjei Jes" wrappingWidth="155.13671875">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown" wrappingWidth="155.13671875">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="022 222 2222" wrappingWidth="158.13671875">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="000 000 000 0000" wrappingWidth="158.13671875">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
                               </Text>
                            </children>
                         </VBox>
+                        <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="147.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 30;">
+                           <graphic>
+                              <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electricity_96px%201.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
                      </children>
                   </Pane>
                   <Pane layoutX="195.0" layoutY="10.0">
@@ -161,18 +163,27 @@
                         </ImageView>
                         <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
                            <children>
-                              <Text fill="#6941d0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sam Howard" wrappingWidth="155.13671875">
+                              <Text fill="#6941d0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown" wrappingWidth="155.13671875">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#6941d0" strokeType="OUTSIDE" strokeWidth="0.0" text="022 332 234 1122" wrappingWidth="158.13671875">
+                              <Text fill="#6941d0" strokeType="OUTSIDE" strokeWidth="0.0" text="000 000 000 0000" wrappingWidth="158.13671875">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
                               </Text>
                            </children>
                         </VBox>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="144.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                           <graphic>
+                              <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
                      </children>
                   </Pane>
                   <Pane layoutX="380.0" layoutY="10.0">
@@ -189,18 +200,27 @@
                         </ImageView>
                         <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
                            <children>
-                              <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjei Jes" wrappingWidth="155.13671875">
+                              <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown" wrappingWidth="155.13671875">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="022 222 2222" wrappingWidth="158.13671875">
+                              <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="000 000 000 0000" wrappingWidth="158.13671875">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="12.0" />
                                  </font>
                               </Text>
                            </children>
                         </VBox>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="144.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                           <graphic>
+                              <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
                      </children>
                   </Pane>
                   <Pane layoutX="565.0" layoutY="10.0">
@@ -216,10 +236,10 @@
             </HBox>
          </content>
       </ScrollPane>
-      <ImageView fitHeight="126.0" fitWidth="117.0" layoutX="99.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/Credit.png" />
-         </image>
-      </ImageView>
+      <Label layoutX="14.0" layoutY="232.0" text="Choose payment method">
+         <font>
+            <Font name="Segoe UI Semibold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
