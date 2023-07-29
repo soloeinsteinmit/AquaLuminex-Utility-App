@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import io.github.palexdev.materialfx.controls.MFXRadioButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -29,11 +28,6 @@
                   <Font name="Segoe UI Semibold" size="14.0" />
                </font>
             </Text>
-            <Label prefHeight="16.0" prefWidth="246.0" text="Pay Bills :  GHS 250" textFill="#130bae">
-               <font>
-                  <Font name="Segoe UI Semibold" size="20.0" />
-               </font>
-            </Label>
          </children>
       </VBox>
       <MFXButton layoutX="663.0" layoutY="468.0" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: tranparent; -fx-border-color: #000; -fx-border-radius: 20; -fx-background-radius: 20;" text="Cancel">
@@ -41,31 +35,7 @@
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
       </MFXButton>
-      <VBox alignment="CENTER" layoutX="412.0" layoutY="86.0" spacing="12.0">
-         <children>
-            <HBox>
-               <children>
-                  <Pane prefHeight="41.0" prefWidth="52.0" style="-fx-border-width: 1 1 1 1; -fx-border-color: #6F4EB9; -fx-background-radius: 8 0 0 5; -fx-border-radius: 8 0 0 5;">
-                     <children>
-                        <Label layoutX="12.0" layoutY="16.0" text="GHC">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <MFXTextField prefHeight="41.0" prefWidth="301.0" promptText="0.00" style="-fx-background-radius: 0 8 8 0; -fx-border-radius: 0 8 8 0; -fx-border-color: #6F4EB9;">
-                     <font>
-                        <Font name="Segoe UI Semibold" size="16.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </MFXTextField>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+      <VBox alignment="CENTER" layoutX="412.0" layoutY="86.0" spacing="12.0" />
       <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="730.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/electricity.png" />
@@ -232,7 +202,7 @@
             <Font name="Segoe UI Semibold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="461.0" layoutY="61.0" text="How much do you want to pay?">
+      <Label layoutX="464.0" layoutY="99.0" text="How much do you want to pay?">
          <font>
             <Font name="Segoe UI Semibold" size="15.0" />
          </font>
@@ -242,20 +212,32 @@
             <Font name="Segoe UI Semibold" size="16.0" />
          </font>
       </MFXButton>
-      <HBox layoutX="480.0" layoutY="156.0" spacing="20.0">
-         <children>
-            <MFXRadioButton text="Water bill " textFill="#883bc3" />
-            <MFXRadioButton text="Post paid bill" textFill="#6b0e94">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </MFXRadioButton>
-         </children>
-      </HBox>
+      <HBox layoutX="480.0" layoutY="156.0" spacing="20.0" />
       <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="751.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/waterdroplet.png" />
          </image>
       </ImageView>
+      <HBox layoutX="410.0" layoutY="131.0">
+         <children>
+            <Pane prefHeight="41.0" prefWidth="52.0" style="-fx-border-width: 1 1 1 1; -fx-border-color: #6F4EB9; -fx-background-radius: 8 0 0 5; -fx-border-radius: 8 0 0 5;">
+               <children>
+                  <Label layoutX="12.0" layoutY="16.0" text="GHC">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <MFXTextField prefHeight="41.0" prefWidth="301.0" promptText="0.00" style="-fx-background-radius: 0 8 8 0; -fx-border-radius: 0 8 8 0; -fx-border-color: #6F4EB9;">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </MFXTextField>
+         </children>
+      </HBox>
    </children>
 </Pane>
