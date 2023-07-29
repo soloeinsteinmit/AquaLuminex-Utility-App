@@ -21,8 +21,10 @@ import java.util.ResourceBundle;
 
 public class RegisterMainController implements Initializable {
 
+    public static StackPane parentStack;
     public static boolean isDone = false;
     public static MFXButton nextBtn;
+    public static boolean isPasswordCreated = false;
     ProgressBarAnimationForward progressBarAnimationForward1;
     ProgressBarAnimationForward progressBarAnimationForward2;
     ProgressBarAnimationBackward progressBarAnimationBackward1;
@@ -30,6 +32,7 @@ public class RegisterMainController implements Initializable {
     ChangingScenes changingScenes = new ChangingScenes();
     @FXML
     private MFXButton nextButton;
+    public static MFXButton next_button;
 
     @FXML
     private MFXButton previousButton;
@@ -61,6 +64,7 @@ public class RegisterMainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         nextBtn = nextButton;
+        next_button = nextButton;
         // initialize first scene
         changingScenes.initializeScene(PersonalDetailsController.class, registerTransitionContainerStack, "personal-details");
 
@@ -113,6 +117,22 @@ public class RegisterMainController implements Initializable {
                             AccountInfoController.staticAccountInfoAnchorPane, "password-security", 'f');
 
                     nextButton.setText("Done");
+                    //isPasswordCreated = false;
+
+
+                    /*
+                    * if isPasswordCreate is asserted true in password security class,
+                    * nextButton is set to disable false
+                    * */
+//                    nextButton.setDisable(!isPasswordCreated);
+                    if (isPasswordCreated) nextButton.setDisable(false);
+                    else {
+                        nextButton.setDisable(true);
+                    }
+
+                    // takes user back to be logged in
+                    nextButton.setOnMouseClicked(event-> ChangingScenes.translateScene(LoginController.class, RegisterMainController.parentStack, registerAnchorPane, "login", 'b'));
+
                     //doneImage.setVisible(true);
                     isDone = true;
                     TimerClass.timeline.stop();
@@ -175,6 +195,6 @@ public class RegisterMainController implements Initializable {
 
     @FXML
     void loginUser(MouseEvent event) {
-        ChangingScenes.translateScene(LoginController.class, LoginController.stackContainer, registerAnchorPane, "login", 'b');
+        ChangingScenes.translateScene(LoginController.class, RegisterMainController.parentStack, registerAnchorPane, "login", 'b');
     }
 }

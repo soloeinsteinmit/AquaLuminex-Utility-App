@@ -14,9 +14,11 @@ import java.util.concurrent.TimeUnit;
 public class HomeController implements Initializable {
 
     Charts charts;
-    private ScheduledExecutorService scheduler;
+    public static ScheduledExecutorService scheduler;
+    public static boolean isSchedulerStarted = false;
 //    private ProgressIndicator progressIndicator;
-    private double progressValue = 1.0; // Initial progress value
+    private double waterProgressValue = 1.0; // Initial progress value
+    private double electricityProgressValue = 0.83;
 
     @FXML
     private MFXProgressSpinner electricityProgressSpinner;
@@ -33,42 +35,56 @@ public class HomeController implements Initializable {
 
 //        progressIndicator = new ProgressIndicator();
         // initialize progress value to 1
-        electricityProgressSpinner.setProgress(progressValue);
-        waterProgressSpinner.setProgress(0.8);
+        electricityProgressSpinner.setProgress(electricityProgressValue);
+        waterProgressSpinner.setProgress(waterProgressValue);
 
         // Schedule the background task to reduce the progress every 1 minute
+        isSchedulerStarted = true;
         scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(this::reduceProgress, 0, 1, TimeUnit.MINUTES);
+        scheduler.scheduleAtFixedRate(this::reduceProgress, 0, 1, TimeUnit.SECONDS);
     }
 
     public void drawLineChart(){
         charts = new Charts();
+        charts.lineChart(lineChart);
         Thread lineChartThread = new Thread(()-> charts.lineChart(lineChart));
-        lineChartThread.start();
+//        lineChartThread.start();
     }
 
     private void reduceProgress(){
         // Update the progress value and set it to the ProgressIndicator
-        progressValue -= 0.01; // Reduce the progress value by 0.1 (10%)
-        if (progressValue >= 0.0) {
-            electricityProgressSpinner.setProgress(progressValue);
-            waterProgressSpinner.setProgress(0.82);
-        }
+        waterProgressValue -= 0.01; // Reduce the progress value by 0.1 (10%)
 
+        if (waterProgressValue >= 0.0) {
+            electricityProgressSpinner.setProgress(electricityProgressValue);
+            waterProgressSpinner.setProgress(waterProgressValue);
+        }
 
         else {
             // If progressValue becomes negative, reset it to 0 and cancel the scheduler
-            progressValue = 0.0;
-            electricityProgressSpinner.setProgress(progressValue);
-            waterProgressSpinner.setProgress(progressValue);
+            waterProgressValue = 0.0;
+            waterProgressSpinner.setProgress(waterProgressValue);
             scheduler.shutdown();
         }
+
+        electricityProgressValue -= 0.01;
+        if (electricityProgressValue >= 0.0) {
+            electricityProgressSpinner.setProgress(electricityProgressValue);
+        }
+
+        else {
+            // If progressValue becomes negative, reset it to 0 and cancel the scheduler
+            electricityProgressValue = 0.0;
+            electricityProgressSpinner.setProgress(electricityProgressValue);
+            scheduler.shutdown();
+        }
+
         //TODO: change color of background in real time
-        if (progressValue <= 4.0){
+       /* if (waterProgressValue <= 4.0){
             electricityProgressSpinner.setStyle("-fx-fill: rgba(175,43,43,0.26);");
         }
-        else if (progressValue <= 8.0){
+        else if (waterProgressValue <= 8.0){
             electricityProgressSpinner.setStyle("-fx-fill: rgba(43,175,43,0.26);");
-        }
+        }*/
     }
 }

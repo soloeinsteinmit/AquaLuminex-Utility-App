@@ -129,9 +129,10 @@ public class PersonalDetailsController implements Initializable {
         addImageButton.setVisible(true);
         normalLabel.setVisible(true);
 
-        String imagePath = "D:\\IntelliJ IDEA\\Java projects\\AquaLuminexApp\\src\\main\\resources\\com\\example\\aqualuminexapp\\images\\circle.png";
+//        String imagePath = "D:\\IntelliJ IDEA\\Java projects\\AquaLuminexApp\\src\\main\\resources\\com\\example\\aqualuminexapp\\images\\circle.png";
         String imagePathResource = "com/example/aqualuminexapp/images/circle.png";
-        profileImage = new Image("file:" + imagePath);
+//        profileImage = new Image("file:" + imagePath);
+        profileImage = new Image(imagePathResource);
 
         profileImageField.setImage(profileImage);
 
@@ -382,6 +383,9 @@ public class PersonalDetailsController implements Initializable {
                 browseLabel.setVisible(false);
                 addImageButton.setVisible(false);
                 normalLabel.setVisible(false);
+
+                // sets image removable
+                removeProfileLabel.setVisible(true);
             });
 
             avatarGridPane.add(imageViews[i], i % 4, i / 4);

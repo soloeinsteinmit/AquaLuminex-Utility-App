@@ -1,5 +1,6 @@
 package com.example.aqualuminexapp;
 
+import com.example.aqualuminexapp.dashboard.home.HomeController;
 import com.example.aqualuminexapp.splashscreen.ProgressBarCounterTask;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import javafx.animation.Animation;
@@ -69,6 +70,24 @@ public class AquaLuminexMain extends Application implements Initializable {
         String iconPath = "com/example/aqualuminexapp/images/logo_only.png"; // Replace 'icon.png' with your icon
         // file path
         stage.getIcons().add(new javafx.scene.image.Image(iconPath));
+
+
+        // closes the meter thread once the window is closed
+        //TODO: make is continue until computer is shutdown
+        stage.setOnCloseRequest(windowEvent -> {
+
+
+            /*
+            * Runs into null pointer, so we check if scheduler is started before
+            * we close the thread task
+            * */
+            if (HomeController.isSchedulerStarted){
+                System.out.println("Scheduler Thread shutdown from main app");
+                HomeController.scheduler.shutdown();
+            }
+
+        });
+
         stage.setTitle("AquaLuminex Utility App");
 
 

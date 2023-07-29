@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    public static StackPane stackContainer;
+    //public static StackPane stackContainer;
 
     @FXML
     private AnchorPane loginAnchorPane;
@@ -29,7 +29,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        stackContainer = parentStackContainer;
+//        stackContainer = parentStackContainer;
+        RegisterMainController.parentStack = parentStackContainer;
     }
 
 

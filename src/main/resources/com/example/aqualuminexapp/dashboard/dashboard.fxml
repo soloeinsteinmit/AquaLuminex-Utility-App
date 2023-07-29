@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.gleidson28.GNAvatarView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -8,16 +9,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="23.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.403224945068359" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="7.0">
+            <ImageView fitHeight="45.0" fitWidth="151.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.685482025146484" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../images/logo.png" />
                </image>
             </ImageView>
+            <HBox alignment="CENTER" layoutX="762.0" layoutY="4.0">
+               <children>
+                  <GNAvatarView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="45.0" stroke="#ffffff00" strokeWidth="0.0" type="CIRCLE">
+                     <image>
+                        <Image url="@../images/avatar3.png" />
+                     </image>
+                  </GNAvatarView>
+                  <VBox alignment="CENTER_LEFT" spacing="3.0">
+                     <children>
+                        <Label text="Scott Stiles">
+                           <font>
+                              <Font name="Segoe UI Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="sc0ttstiles@gmail.com" textFill="#393939">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children></AnchorPane>
    </top>
    <center>
