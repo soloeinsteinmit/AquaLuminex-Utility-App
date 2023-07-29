@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import impl.com.calendarfx.view.NumericTextField?>
+
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -58,14 +59,14 @@
                         </Label>
                      </children>
                   </Pane>
-                  <NumericTextField prefHeight="41.0" prefWidth="301.0" promptText="0.00" style="-fx-background-radius: 0 8 8 0; -fx-border-radius: 0 8 8 0; -fx-border-color: #6F4EB9;">
+                  <MFXTextField prefHeight="41.0" prefWidth="301.0" promptText="0.00" style="-fx-background-radius: 0 8 8 0; -fx-border-radius: 0 8 8 0; -fx-border-color: #6F4EB9;">
                      <font>
                         <Font name="Segoe UI Semibold" size="16.0" />
                      </font>
                      <padding>
                         <Insets left="10.0" />
                      </padding>
-                  </NumericTextField>
+                  </MFXTextField>
                </children>
             </HBox>
             <MFXButton prefHeight="41.0" prefWidth="356.0" style="-fx-background-color: #6F4EB9; -fx-background-radius: 5;" text="TOP UP" textFill="WHITE">
