@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e5e8eb" height="132.0" layoutX="67.0" layoutY="64.0" stroke="WHITE" strokeType="INSIDE" width="371.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.7105262875556946" green="0.6414473652839661" blue="0.6414473652839661" />
+               </color>
+            </DropShadow>
+         </effect></Rectangle>
+      <Label layoutX="164.0" layoutY="72.0" prefHeight="49.0" prefWidth="197.0" text="My Home" textFill="#7842a3">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="94.0" layoutY="137.0" text="PostPaid" textFill="#5267f5">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="137.0" text="P123456" textFill="#a19b0a">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="243.0" layoutY="137.0" prefHeight="25.0" prefWidth="124.0" text="GN-1234-1223   " textFill="#0aa162">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="361.0" layoutY="137.0" prefHeight="25.0" prefWidth="61.0" text="ACCRA" textFill="#7842a3">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9eaeb" height="263.0" layoutX="77.0" layoutY="224.0" stroke="#fcf8f8" strokeType="INSIDE" width="371.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.8421052694320679" green="0.7134503126144409" blue="0.7134503126144409" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f6f8" height="72.0" layoutX="679.0" layoutY="191.0" stroke="#5e1dc8" strokeType="INSIDE" width="113.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e1dc8" height="72.0" layoutX="510.0" layoutY="191.0" stroke="#fcf8f8" strokeType="INSIDE" width="124.0" />
+      <Label layoutX="104.0" layoutY="250.0" prefHeight="32.0" prefWidth="312.0" text="More details">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="304.0" prefHeight="17.0" prefWidth="261.0" text="Customer Account Number:               555678903" />
+      <Label layoutX="108.0" layoutY="339.0" prefHeight="17.0" prefWidth="288.0" text="Customer Name:                                Ernest Ofori Adjei" />
+      <Label layoutX="106.0" layoutY="373.0" prefHeight="17.0" prefWidth="261.0" text="Metering System:                               MBH POWER" />
+      <Label layoutX="108.0" layoutY="408.0" text="Total Spent kWh: " />
+      <Label layoutX="110.0" layoutY="442.0" text="Total Spent GHS:" />
+      <Label layoutX="470.0" layoutY="69.0" prefHeight="27.0" prefWidth="326.0" text="Daily Comsumption Estimate:  kWh 6.98 ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="471.0" layoutY="104.0" text="(GHS12.8)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="523.0" layoutY="197.0" prefHeight="30.0" prefWidth="54.0" text="BILL" textFill="#f8f5f5">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="523.0" layoutY="233.0" prefHeight="17.0" prefWidth="73.0" text="GHS 500.99" textFill="#eee9e9" />
+      <Label layoutX="692.0" layoutY="204.0" text="Dept" textFill="#5e1dc8" />
+      <Label layoutX="692.0" layoutY="233.0" text="GHS 3009.70" textFill="#5e1dc8" />
+      <Button layoutX="566.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Pay Bills" textFill="#5e1dc8">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="665.0" layoutY="462.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" text="Remove Meter" />
+      <ImageView fitHeight="47.0" fitWidth="68.0" layoutX="91.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/meter.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/avatar1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="760.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/edit.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
