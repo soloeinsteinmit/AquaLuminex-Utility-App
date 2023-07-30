@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e5e8eb" height="129.0" layoutX="74.0" layoutY="39.0" stroke="WHITE" strokeType="INSIDE" width="371.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e5e8eb" height="132.0" layoutX="67.0" layoutY="64.0" stroke="WHITE" strokeType="INSIDE" width="371.0">
          <effect>
             <DropShadow>
                <color>
@@ -26,7 +26,7 @@
             <Image url="@../Documents/LIFE%20PROJECT%20%20WORK/PERSONAL/AquaLuminex-Utility-App/src/main/resources/com/example/aqualuminexapp/images/meter.png" />
          </image>
       </ImageView>
-      <Label layoutX="145.0" layoutY="45.0" prefHeight="49.0" prefWidth="197.0" text="My Home" textFill="#7842a3">
+      <Label layoutX="164.0" layoutY="72.0" prefHeight="49.0" prefWidth="197.0" text="My Home" textFill="#7842a3">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
@@ -97,5 +97,20 @@
          </font>
       </Button>
       <Button layoutX="665.0" layoutY="462.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" text="Remove Meter" />
+      <ImageView fitHeight="47.0" fitWidth="68.0" layoutX="91.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/meter.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/avatar1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="760.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/edit.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
