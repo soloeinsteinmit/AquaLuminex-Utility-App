@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 
 public class TransactionCardController implements Initializable {
 
+
+
     @FXML
     private Label amountPurchasedLabel;
 
@@ -42,7 +44,7 @@ public class TransactionCardController implements Initializable {
         // initialize date time
         //TODO: this method will be used somewhere appropriate... this is for testing the code
 //        Thread getDateTimeThread = new Thread(()-> getDateTimeLabels(dateLabel, timeLabel));
-        getDateTimeLabels(dateLabel, timeLabel);
+//        getDateTimeLabels(dateLabel, timeLabel);
     }
 
 
@@ -64,5 +66,33 @@ public class TransactionCardController implements Initializable {
             timeLabel.setText(formattedTime);
         });
         getDateTimeThread.start();
+    }
+
+    public Label getAmountPurchasedLabel() {
+        return amountPurchasedLabel;
+    }
+
+    public Label getAqNumberLabel() {
+        return aqNumberLabel;
+    }
+
+    public Label getDateLabel() {
+        return dateLabel;
+    }
+
+    public Label getMeterNameLabel() {
+        return meterNameLabel;
+    }
+
+    public ImageView getMeterTypeImgView() {
+        return meterTypeImgView;
+    }
+
+    public ImageView getStatusImgView() {
+        return statusImgView;
+    }
+
+    public Label getTimeLabel() {
+        return timeLabel;
     }
 }

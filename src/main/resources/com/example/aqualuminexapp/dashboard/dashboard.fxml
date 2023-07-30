@@ -69,7 +69,7 @@
           </Tab>
             <Tab closable="false">
                <content>
-                  <fx:include source="meter/meter.fxml" />
+                  <fx:include source="meter/meters.fxml" />
                </content>
 <!--               <content>-->
 <!--                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="841.0" style="-fx-background-color: navy;" />-->

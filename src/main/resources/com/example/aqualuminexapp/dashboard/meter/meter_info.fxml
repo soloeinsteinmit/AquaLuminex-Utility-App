@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="46.0" layoutY="224.0" prefHeight="271.0" prefWidth="404.0" style="-fx-background-color: #dddddd;">
          <children>
@@ -89,7 +88,7 @@
             </Label>
             <ImageView layoutX="8.0" layoutY="10.0">
                <image>
-                  <Image url="@../Downloads/home_96px%201.jpg" />
+                  <Image url="@../../images/meter.png" />
                </image>
             </ImageView>
          </children>
@@ -120,12 +119,12 @@
       </Label>
       <ImageView fitHeight="20.0" fitWidth="50.0" layoutX="44.0" layoutY="14.0">
          <image>
-            <Image url="@../Downloads/icons8-arrow-48.png" />
+            <Image url="@../../images/avatar1.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="755.0" layoutY="24.0">
          <image>
-            <Image url="@../Downloads/icons8-pencil-26.png" />
+            <Image url="@../../images/edit.png" />
          </image>
       </ImageView>
       <Label layoutX="637.0" layoutY="486.0" prefHeight="30.0" prefWidth="153.0" text="Remove meter" textFill="#db1b1b">

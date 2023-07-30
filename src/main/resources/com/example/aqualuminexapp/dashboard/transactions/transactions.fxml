@@ -21,27 +21,31 @@
          <children>
             <Arc fill="#6c4cb4" length="180.0" radiusX="147.0" radiusY="130.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
             <Arc fill="WHITE" layoutY="1.0" length="180.0" radiusX="91.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
-            <VBox alignment="CENTER" layoutX="-54.0" layoutY="-63.0">
+            <VBox alignment="CENTER" layoutX="-74.0" layoutY="-74.0" prefHeight="80.0" prefWidth="148.0">
                <children>
-                  <Label alignment="CENTER" text="GHC" textFill="#9a9a9a">
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" text="GHC" textFill="#9a9a9a">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalPriceLabel" alignment="CENTER" text="5000.90" textAlignment="CENTER">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="84.0" text="Total Spent" textAlignment="CENTER" textFill="#6f6b6b" wrapText="true">
                      <font>
                         <Font name="Segoe UI Semibold" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="totalPriceLabel" alignment="CENTER" prefHeight="22.0" prefWidth="101.0" text="5000.90" textAlignment="CENTER">
-                     <font>
-                        <Font name="Segoe UI Semibold" size="20.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
          </children>
       </Group>
-      <Label alignment="CENTER" layoutX="378.0" layoutY="139.0" text="Total Spent" textAlignment="CENTER" textFill="#6f6b6b" wrapText="true">
-         <font>
-            <Font name="Segoe UI Semibold" size="16.0" />
-         </font>
-      </Label>
       <HBox alignment="CENTER" layoutX="152.0" layoutY="90.0" prefHeight="31.0" prefWidth="84.0" spacing="8.0">
          <children>
             <Circle fill="#6c4cb4" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
@@ -80,9 +84,9 @@
             </Label>
          </children>
       </HBox>
-      <MFXScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="161.0" prefHeight="351.0" prefWidth="821.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <MFXScrollPane hbarPolicy="NEVER" layoutY="155.0" prefHeight="360.0" prefWidth="821.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
-            <VBox fx:id="transactionsCardVbox" alignment="TOP_CENTER" prefHeight="350.0" prefWidth="821.0" spacing="4.0" />
+            <VBox fx:id="transactionsCardVbox" alignment="TOP_CENTER" prefHeight="361.0" prefWidth="821.0" spacing="4.0" />
          </content>
       </MFXScrollPane>
    </children>

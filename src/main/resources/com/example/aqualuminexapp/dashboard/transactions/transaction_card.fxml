@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
@@ -20,40 +21,62 @@
             </ImageView>
          </children>
       </Pane>
-      <Label fx:id="amountPurchasedLabel" alignment="CENTER" layoutX="549.0" layoutY="17.0" text="GHC 200.00" AnchorPane.rightAnchor="76.0">
-         <font>
-            <Font name="Segoe UI Semibold" size="14.0" />
-         </font>
-      </Label>
+      <HBox layoutX="605.0" layoutY="18.0">
+         <children>
+            <Label alignment="CENTER" text="GHC ">
+               <font>
+                  <Font name="Segoe UI Semibold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="amountPurchasedLabel" alignment="CENTER" text="200.00">
+               <font>
+                  <Font name="Segoe UI Semibold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
       <ImageView fx:id="statusImgView" fitHeight="26.0" fitWidth="20.0" layoutX="666.0" layoutY="17.0" preserveRatio="true" AnchorPane.rightAnchor="14.0">
          <image>
             <Image url="@../../images/electricity_96px%202.png" />
          </image>
       </ImageView>
-      <VBox layoutX="59.0" layoutY="6.0" spacing="3.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="6.0">
+      <VBox layoutX="59.0" layoutY="6.0" spacing="1.0">
          <children>
             <Label fx:id="meterNameLabel" text="Adjei House" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="dateLabel" text="January 03 2023" textFill="#8a8484">
+            <HBox alignment="CENTER" spacing="11.0">
+               <children>
+                  <Label fx:id="dateLabel" text="January 03 2023" textFill="#8a8484">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Circle radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Label fx:id="timeLabel" text="7:20 AM" textFill="#8a8484">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="259.0" layoutY="31.0">
+         <children>
+            <Label text="AQ Number: " textFill="#8a8484">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="aqNumberLabel" text="9999999999" textFill="#8a8484">
                <font>
                   <Font name="Segoe UI Semibold" size="12.0" />
                </font>
             </Label>
          </children>
-      </VBox>
-      <Label fx:id="timeLabel" layoutX="163.0" layoutY="31.0" text="7:20 AM" textFill="#8a8484">
-         <font>
-            <Font name="Segoe UI Semibold" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="aqNumberLabel" layoutX="236.0" layoutY="31.0" text="AQ Number: 9999999999" textFill="#8a8484">
-         <font>
-            <Font name="Segoe UI Semibold" size="12.0" />
-         </font>
-      </Label>
-      <Circle layoutX="156.0" layoutY="40.0" radius="1.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      </HBox>
    </children>
 </AnchorPane>

@@ -41,7 +41,7 @@ public class HomeController implements Initializable {
         // Schedule the background task to reduce the progress every 1 minute
         isSchedulerStarted = true;
         scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(this::reduceProgress, 0, 1, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(this::reduceProgress, 0, 1, TimeUnit.MINUTES);
     }
 
     public void drawLineChart(){

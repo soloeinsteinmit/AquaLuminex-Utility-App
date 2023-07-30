@@ -23,6 +23,8 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
 
+        //AppSettings.initConfig();
+
         //TODO: make is continue until computer is shutdown
         stage.setOnCloseRequest(windowEvent -> {
             System.out.println("Scheduler Thread shutdown from main app");

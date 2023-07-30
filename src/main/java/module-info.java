@@ -16,11 +16,12 @@ module com.example.aqualuminexapp {
 
 
     exports com.example.aqualuminexapp;
-    
     opens com.example.aqualuminexapp to javafx.fxml, javafx.graphics;
 
     // utils package
     exports com.example.aqualuminexapp.utils;
+    opens com.example.aqualuminexapp.utils to com.google.gson;
+
 
     // register package
     exports com.example.aqualuminexapp.register;
@@ -35,7 +36,6 @@ module com.example.aqualuminexapp {
 
     // opens images
     opens com.example.aqualuminexapp.images;
-    opens com.example.aqualuminexapp.utils to javafx.fxml;
 
     // meter package
     exports com.example.aqualuminexapp.dashboard.meter;

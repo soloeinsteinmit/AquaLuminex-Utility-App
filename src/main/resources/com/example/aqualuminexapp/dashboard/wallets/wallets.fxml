@@ -1,15 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #fff; -fx-background-radius: 20; -fx-padding: 0 10 100 0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.wallets.WalletsController">
    <children>
-      <Label layoutX="426.0" layoutY="262.0" text="Wallet">
-         <font>
-            <Font size="43.0" />
-         </font>
-      </Label>
+      <AnchorPane layoutX="44.0" layoutY="16.0" prefHeight="289.0" prefWidth="699.0">
+         <children>
+            <VBox spacing="8.0">
+               <children>
+                  <Pane prefHeight="183.0" prefWidth="733.0" style="-fx-background-color: linear-gradient(from 0.0% 92.4171% to 53.0806% 100.0%, #6b51ba 0.0%, #08c8e5 100.0%); -fx-background-radius: 15;">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="259.0" layoutX="424.2109375" layoutY="38.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/department_384px%201.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="26.0" layoutY="101.0">
+                           <children>
+                              <Label text="The displayed balance does not correspond to any of your meters. This account is solely for refund purposes, " textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="allowing you to purchase credits or withdraw to your mobile or bank account. To buy utility bills, you can deposit" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="funds into your AQ as well." textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="26.0" layoutY="16.0">
+                           <children>
+                              <Label text="My AquaLuminex Balance" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="31.0" prefWidth="42.0" text="GHC" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="300.00" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="55.0" fitWidth="69.0" layoutX="511.2109375" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/png-transparent-board-central-chip-circuit-cpu-ic-integrated-processing-security-smart-thumbnail-removebg-preview%201.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="733.0" spacing="43.0">
+                     <children>
+                        <MFXButton prefHeight="45.0" prefWidth="360.0" style="-fx-background-color: linear-gradient(from 0.0% 92.4171% to 55.9242% 100.0%, #6b51ba 0.0%, #08c8e5 100.0%);" text="Deposit" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXButton>
+                        <MFXButton layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="360.0" style="-fx-background-color: tranparent; -fx-border-color: #000; -fx-border-width: 1.5; -fx-border-radius: 5; -fx-background-radius: 5;" text="Withdraw">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Label text="Wallets">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Include your mobile money or bank card ( along with the associated account ) for payment purposes." textFill="#8d8d8d">
+                           <font>
+                              <Font name="Arial Unicode MS" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <MFXScrollPane layoutX="16.0" layoutY="310.0" prefHeight="198.0" prefWidth="790.0" vbarPolicy="NEVER">
+         <content>
+            <HBox prefHeight="188.0" prefWidth="949.0">
+               <children>
+                  <Pane>
+                     <children>
+                        <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/aqcard.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="7.0" layoutY="12.0" spacing="6.0">
+                           <children>
+                              <Text fill="#4643d0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Aqualuminex Balance" wrappingWidth="166.1367187499999">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#4c36b2" strokeType="OUTSIDE" strokeWidth="0.0" text="GHC 00.00" wrappingWidth="80.13671874999989">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="8.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/IMG-20230606-WA0018%201.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/mtn.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="7.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/image%205.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown" wrappingWidth="155.13671875">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="000 000 000 0000" wrappingWidth="158.13671875">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="147.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/electricity_96px%201.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="195.0" layoutY="10.0">
+                     <children>
+                        <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/attigo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="7.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/airtel.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
+                           <children>
+                              <Text fill="#6941d0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown" wrappingWidth="155.13671875">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#6941d0" strokeType="OUTSIDE" strokeWidth="0.0" text="000 000 000 0000" wrappingWidth="158.13671875">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="144.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                           <graphic>
+                              <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="380.0" layoutY="10.0">
+                     <children>
+                        <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/voda.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="7.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/image%206%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
+                           <children>
+                              <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="Unknown" wrappingWidth="155.13671875">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#e8e8e8" strokeType="OUTSIDE" strokeWidth="0.0" text="000 000 000 0000" wrappingWidth="158.13671875">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="148.0" layoutY="144.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                           <graphic>
+                              <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="565.0" layoutY="10.0">
+                     <children>
+                        <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/90add%20card.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </content>
+      </MFXScrollPane>
    </children>
 </AnchorPane>
