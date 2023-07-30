@@ -19,7 +19,7 @@ public class CardsData {
     public static HashMap<String, ArrayList<String>> transactionsCardData(){
         cardData.put("1111111111", new ArrayList<>(List.of("Hello Meter", "January 26 2023", "4:11 AM", "33.21",
                 "1")));
-        cardData.put("7890864312", new ArrayList<>(List.of("Apple Meter", "March 03 2021", "7:11 AM", "899.00", "1")));
+        cardData.put("7890864312", new ArrayList<>(List.of("Jessica", "March 03 2021", "7:11 AM", "899.00", "1")));
         cardData.put("3333333333", new ArrayList<>(List.of("Mango Meter", "September 03 2021", "4:11 AM", "3.09",
                 "1")));
         cardData.put("9876789876", new ArrayList<>(List.of("Orange Meter", "July 03 2021", "9:31 AM", "899.39", "2")));

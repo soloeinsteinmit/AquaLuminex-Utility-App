@@ -25,9 +25,9 @@ public class TransactionsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        Thread addNodeThread = new Thread(this::addNode2);
-//        addNodeThread.start();
 
+        Thread addNodeThread = new Thread(this::addNode2);
+        addNodeThread.start();
 
     }
 
@@ -67,17 +67,21 @@ public class TransactionsController implements Initializable {
     private void addNode2() {
         int i = 0;
         double sum = 0;
+
+        Node[] nodes = new Node[CardsData.transactionsCardData().size()];
+        FXMLLoader[] loader = new FXMLLoader[CardsData.transactionsCardData().size()];
+        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat formatPurchasedAmt = new DecimalFormat("0.00");
+
         for(Map.Entry<String, ArrayList<String>> eachCardInfo: CardsData.transactionsCardData().entrySet()){
-            Node[] nodes = new Node[CardsData.transactionsCardData().size()];
-            FXMLLoader[] loader = new FXMLLoader[CardsData.transactionsCardData().size()];
+
             loader[i] = new FXMLLoader(TransactionCardController.class.getResource("transaction_card.fxml"));
             try {
                 nodes[i] = loader[i].load();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            DecimalFormat df = new DecimalFormat("#.##");
-            DecimalFormat formatPurchasedAmt = new DecimalFormat("0.00");
+
 
             // Access the controller associated with the FXML file
             TransactionCardController controller = loader[i].getController();
@@ -95,6 +99,7 @@ public class TransactionsController implements Initializable {
             if (eachCardInfo.getValue().get(4).equals("1")){
                 statusImage = new Image("com/example/aqualuminexapp/images/correct.png");
                 meterTypeImage = new Image("com/example/aqualuminexapp/images/electricity.png");
+
                 controller.getStatusImgView().setImage(statusImage);
                 controller.getMeterTypeImgView().setImage(meterTypeImage);
             }else {
@@ -110,7 +115,14 @@ public class TransactionsController implements Initializable {
 
             totalPriceLabel.setText(String.valueOf(df.format(sum)));
             transactionsCardVbox.getChildren().add(nodes[i]);
-            i += 1;
+
+            if(i == CardsData.transactionsCardData().size() - 1){
+                break;
+            }else {
+                i += 1;
+            }
+
+
         }
     }
 }

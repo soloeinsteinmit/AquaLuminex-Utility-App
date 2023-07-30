@@ -15,8 +15,8 @@ public class AppSettings {
     public static final String CONFIG_FILE = "config.txt";
 
     public AppSettings(){
-        userName = "AquaLuminex";
-        email = "email@gmail.com";
+        userName = "null";
+        email = "null";
         telephoneNumber = "null";
         gender = "null";
     }
@@ -35,7 +35,9 @@ public class AppSettings {
             throw new RuntimeException(e);
         }finally {
             try {
-                writer.close();
+                if (writer != null) {
+                    writer.close();
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

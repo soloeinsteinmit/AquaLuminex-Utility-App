@@ -13,6 +13,7 @@ module com.example.aqualuminexapp {
     //requires java.mail;
     requires TrayTester;
     requires com.google.gson;
+    requires org.xerial.sqlitejdbc;
 
 
     exports com.example.aqualuminexapp;
