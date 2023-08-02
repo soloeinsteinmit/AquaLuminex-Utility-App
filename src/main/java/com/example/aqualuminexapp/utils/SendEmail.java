@@ -14,18 +14,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SendEmail {
-
     private static final String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*" +
             "@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
     private static String ID;
     private static Calendar calendar;
-
     public SendEmail() {
 
 
     }
-
-
     public static Boolean emailValidate(String email) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);

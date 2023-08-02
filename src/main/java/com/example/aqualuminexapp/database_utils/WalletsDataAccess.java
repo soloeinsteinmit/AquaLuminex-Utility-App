@@ -25,7 +25,7 @@ public class WalletsDataAccess {
                 FROM wallet_balance
                 INNER JOIN wallet_account
                 ON wallet_balance.wallet_id = wallet_account.wallet_id
-                WHERE user_id = ?;""");
+                WHERE wallet_balance.user_id = ? AND wallet_balance.wallet_id = 'aq_balance';""");
 
         /*
          * returns true means read from config.json
