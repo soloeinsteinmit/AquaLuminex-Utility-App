@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="walletsCardsHBox" prefHeight="188.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.WalletCardsController">
+   <children>
+      <Pane>
+         <children>
+            <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/aqcard.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="7.0" layoutY="12.0" spacing="6.0">
+               <children>
+                  <Label text="My Aqualuminex Balance" textFill="#4643d0">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="aqBalanceCard" text="GHC 00.00" textFill="#4643d0">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="8.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/IMG-20230606-WA0018%201.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane>
+         <children>
+            <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/mtn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="7.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/image%205.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
+               <children>
+                  <Label fx:id="mtnAccName" text="Unknown">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mtnAccNumber" text="000 000 000 0000">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <MFXButton fx:id="mtnDeleteBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="141.0" layoutY="145.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/electricity_96px%201.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+            <MFXButton fx:id="addMTNAcc" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="142.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/plus_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="195.0" layoutY="10.0">
+         <children>
+            <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/attigo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="7.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/airtel.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
+               <children>
+                  <Label fx:id="tigoAccName" text="Unknown" textFill="#6941d0">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tigoAccNumber" text="000 000 000 0000" textFill="#6941d0">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <MFXButton fx:id="addTigoAcc" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/plus_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+            <MFXButton fx:id="tigoDeleteBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/electricity_96px%201.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="380.0" layoutY="10.0">
+         <children>
+            <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/voda.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="7.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/image%206%20(1).png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="7.0" layoutY="14.0" spacing="6.0">
+               <children>
+                  <Label fx:id="vodaAccName" text="Unknown" textFill="#e8e8e8">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vodaAccNumber" text="000 000 000 0000" textFill="#e8e8e8">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <MFXButton fx:id="addVodaAcc" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="142.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/plus_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+            <MFXButton fx:id="vodaDeleteBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="142.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/electricity_96px%201.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="565.0" layoutY="10.0">
+         <children>
+            <ImageView fitHeight="188.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/90add%20card.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets left="15.0" />
+   </padding>
+</HBox>

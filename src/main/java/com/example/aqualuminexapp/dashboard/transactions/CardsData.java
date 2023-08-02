@@ -8,11 +8,28 @@ import java.util.List;
  * Class is for testing data in the transactions
  * */
 public class CardsData {
+
+
+    String meterKind;
     String meterName;
     String date;
     String time;
     String aqTokenNumber;
-    String amount;
+    String status;
+    String purchasedAmount;
+
+
+    public CardsData(String meterKind, String meterName, String date, String time,
+                        String purchasedAmount, String status) {
+        this.meterKind = meterKind;
+        this.meterName = meterName;
+        this.date = date;
+        this.time = time;
+        this.purchasedAmount = purchasedAmount;
+        this.status = status;
+    }
+
+
 
     public static HashMap<String, ArrayList<String>> cardData = new HashMap<String, ArrayList<String>>();
 
@@ -35,13 +52,14 @@ public class CardsData {
         return cardData;
     }
 
-    public CardsData(String meterName, String date, String time, String aqTokenNumber, String amount, String status) {
-        this.meterName = meterName;
-        this.date = date;
-        this.time = time;
-        this.aqTokenNumber = aqTokenNumber;
-        this.amount = amount;
-        this.status = status;
+
+
+    public String getMeterKind() {
+        return meterKind;
+    }
+
+    public void setMeterKind(String meterKind) {
+        this.meterKind = meterKind;
     }
 
     public String getMeterName() {
@@ -76,14 +94,6 @@ public class CardsData {
         this.aqTokenNumber = aqTokenNumber;
     }
 
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -92,8 +102,13 @@ public class CardsData {
         this.status = status;
     }
 
-    String status;
+    public String getPurchasedAmount() {
+        return purchasedAmount;
+    }
 
+    public void setPurchasedAmount(String purchasedAmount) {
+        this.purchasedAmount = purchasedAmount;
+    }
 
 
 }

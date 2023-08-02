@@ -49,6 +49,7 @@ public class MetersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         TopUpPrepaidController.topUpStack = metersParentStackPane;
+        TopUpPostPaidController.topUpStack = metersParentStackPane;
 
     }
 

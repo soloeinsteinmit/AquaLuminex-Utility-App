@@ -50,7 +50,7 @@ public class AccountInfoController implements Initializable {
         initializeAccountIdValidation();
         labelErrorMsg.setText("");
 
-
+        RegisterMainController.accountIdField = accountIdTextField;
     }
 
     @FXML

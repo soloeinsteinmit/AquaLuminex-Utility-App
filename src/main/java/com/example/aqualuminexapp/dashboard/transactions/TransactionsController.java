@@ -1,5 +1,6 @@
 package com.example.aqualuminexapp.dashboard.transactions;
 
+import com.example.aqualuminexapp.database_utils.TransactionsDataAccess;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,8 +11,8 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -73,7 +74,15 @@ public class TransactionsController implements Initializable {
         DecimalFormat df = new DecimalFormat("#.##");
         DecimalFormat formatPurchasedAmt = new DecimalFormat("0.00");
 
-        for(Map.Entry<String, ArrayList<String>> eachCardInfo: CardsData.transactionsCardData().entrySet()){
+        TransactionsDataAccess transactionsData = new TransactionsDataAccess();
+
+        try {
+            transactionsData.getAllTransactions(); // retrieves data from db into transactionInfo HashMap
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        for(Map.Entry<String, CardsData> eachCardInfo: TransactionsDataAccess.transactionsInfo.entrySet()){
 
             loader[i] = new FXMLLoader(TransactionCardController.class.getResource("transaction_card.fxml"));
             try {
@@ -87,27 +96,36 @@ public class TransactionsController implements Initializable {
             TransactionCardController controller = loader[i].getController();
 
             // Modify the content using the controller's methods/properties
-            controller.getMeterNameLabel().setText(eachCardInfo.getValue().get(0));
-            controller.getDateLabel().setText(eachCardInfo.getValue().get(1));
-            controller.getTimeLabel().setText(eachCardInfo.getValue().get(2));
+            controller.getMeterNameLabel().setText(eachCardInfo.getValue().getMeterName());
+            controller.getDateLabel().setText(eachCardInfo.getValue().getDate());
+            controller.getTimeLabel().setText(eachCardInfo.getValue().getTime());
             controller.getAqNumberLabel().setText(eachCardInfo.getKey());
-            double formattedAmountPurchased = Double.parseDouble(eachCardInfo.getValue().get(3));
+            double formattedAmountPurchased = Double.parseDouble(eachCardInfo.getValue().getPurchasedAmount());
             controller.getAmountPurchasedLabel().setText(formatPurchasedAmt.format(formattedAmountPurchased));
             Image statusImage;
             Image meterTypeImage;
 
-            if (eachCardInfo.getValue().get(4).equals("1")){
+
+            // checks meter status
+            if (eachCardInfo.getValue().getStatus().equals("success")){
                 statusImage = new Image("com/example/aqualuminexapp/images/correct.png");
-                meterTypeImage = new Image("com/example/aqualuminexapp/images/electricity.png");
 
                 controller.getStatusImgView().setImage(statusImage);
-                controller.getMeterTypeImgView().setImage(meterTypeImage);
             }else {
                 statusImage = new Image("com/example/aqualuminexapp/images/electricity_96px 2.png");
                 controller.getStatusImgView().setImage(statusImage);
+            }
+
+            // checks meter kind
+            if (eachCardInfo.getValue().getMeterKind().equals("water")){
                 meterTypeImage = new Image("com/example/aqualuminexapp/images/waterdroplet.png");
+
+                controller.getMeterTypeImgView().setImage(meterTypeImage);
+            }else {
+                meterTypeImage = new Image("com/example/aqualuminexapp/images/electricity.png");
                 controller.getMeterTypeImgView().setImage(meterTypeImage);
             }
+
 
 
             //controller.getMeterNameLabel().setText("Hello Suckers");

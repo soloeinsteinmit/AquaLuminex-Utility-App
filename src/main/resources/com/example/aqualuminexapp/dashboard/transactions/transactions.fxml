@@ -86,7 +86,7 @@
       </HBox>
       <MFXScrollPane hbarPolicy="NEVER" layoutY="155.0" prefHeight="360.0" prefWidth="821.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
-            <VBox fx:id="transactionsCardVbox" alignment="TOP_CENTER" prefHeight="361.0" prefWidth="821.0" spacing="4.0" />
+            <VBox fx:id="transactionsCardVbox" alignment="TOP_CENTER" prefWidth="819.0" spacing="4.0" />
          </content>
       </MFXScrollPane>
    </children>

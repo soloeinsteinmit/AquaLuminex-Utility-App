@@ -1,10 +1,8 @@
 package com.example.aqualuminexapp.register;
 
 import com.example.aqualuminexapp.LoginController;
-import com.example.aqualuminexapp.utils.ChangingScenes;
-import com.example.aqualuminexapp.utils.ProgressBarAnimationBackward;
-import com.example.aqualuminexapp.utils.ProgressBarAnimationForward;
-import com.example.aqualuminexapp.utils.TimerClass;
+import com.example.aqualuminexapp.utils.*;
+import io.github.gleidson28.GNAvatarView;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
@@ -60,9 +58,21 @@ public class RegisterMainController implements Initializable {
 
     public static MFXTextField userName;
     public static MFXTextField emailAddress;
+    public static MFXTextField telephoneNumber;
+    public static GNAvatarView profileImg;
+    public static String gender;
+    public static MFXTextField accountIdField;
+    public static String password;
 
+
+     public static AppSettings appSettings;
+    public static String profileImagePath;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // makes config.json file ready to store configurations
+        appSettings = AppSettings.getAppSettings();
+
+
         nextBtn = nextButton;
         next_button = nextButton;
         // initialize first scene
@@ -96,8 +106,33 @@ public class RegisterMainController implements Initializable {
                     nextButton.setDisable(true);
 
                     // gets username and email and pass data to the AccountInfoController for email to be sent
-                    AccountInfoController.userName = userName.getText();
-                    AccountInfoController.emailAddress = emailAddress.getText();
+
+                    // create temporal variables for storing credentials
+                    String uName = userName.getText();
+                    String email = emailAddress.getText();
+                    String tNumber = telephoneNumber.getText();
+
+
+                    // gets name and email address for sending email
+                    AccountInfoController.userName = uName;
+                    AccountInfoController.emailAddress = email;
+
+
+
+                    // ===========================================================================
+                    // storing configurations into config.json file
+
+                    appSettings.setUserName(uName);
+                    appSettings.setEmail(email);
+                    appSettings.setTelephoneNumber(tNumber);
+                    appSettings.setProfileImagePath(profileImagePath);
+                    appSettings.setGender(gender);
+
+                    // writes app setting to config.json file
+                    AppSettings.writeAppSettingsToConfig(appSettings);
+                    // ===========================================================================
+
+
                     System.out.println("Name = " + AccountInfoController.userName + ", email = " + AccountInfoController.emailAddress);
                     System.out.println("Register");
 
@@ -119,15 +154,39 @@ public class RegisterMainController implements Initializable {
                     nextButton.setText("Done");
                     //isPasswordCreated = false;
 
+                    // getting inputted account id
+                    String accId = accountIdField.getText();
+                    // ===========================================================================
+                    // storing configurations into config.json file
+                    appSettings.setAccount_id(accId);
+
+                    // writes app setting to config.json file
+                    AppSettings.writeAppSettingsToConfig(appSettings);
+                    // ===========================================================================
 
                     /*
                     * if isPasswordCreate is asserted true in password security class,
                     * nextButton is set to disable false
                     * */
 //                    nextButton.setDisable(!isPasswordCreated);
-                    if (isPasswordCreated) nextButton.setDisable(false);
+                    if (isPasswordCreated){
+                        nextButton.setDisable(false);
+                        /*Thread dbDataThread = new Thread(()->{
+                            try {
+                                RegisterDataAccess.insertAccountId();
+                                RegisterDataAccess.insertPassword();
+                                RegisterDataAccess.insertPersonalDetails();
+
+                                System.out.println("Inserting Data");
+                            } catch (SQLException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+                        dbDataThread.start();*/
+                    }
                     else {
                         nextButton.setDisable(true);
+
                     }
 
                     // takes user back to be logged in

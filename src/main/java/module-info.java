@@ -1,8 +1,11 @@
+/**
+ *
+ */
 module com.example.aqualuminexapp {
     requires javafx.fxml;
     requires org.slf4j;
 //    requires multi.map;
-    requires mysql.connector.j;
+    //requires mysql.connector.j;
     requires java.sql;
     requires com.jfoenix;
     requires MaterialFX;
@@ -14,6 +17,11 @@ module com.example.aqualuminexapp {
     requires TrayTester;
     requires com.google.gson;
     requires org.xerial.sqlitejdbc;
+    requires org.apache.commons.codec;
+    requires comm;
+
+    //requires core;
+    //requires client;
 
 
     exports com.example.aqualuminexapp;
@@ -60,4 +68,8 @@ module com.example.aqualuminexapp {
     // home package
     exports com.example.aqualuminexapp.dashboard.home;
     opens com.example.aqualuminexapp.dashboard.home to javafx.fxml;
+
+    // database
+    opens com.example.aqualuminexapp.database_utils;
+    exports com.example.aqualuminexapp.database_utils;
 }

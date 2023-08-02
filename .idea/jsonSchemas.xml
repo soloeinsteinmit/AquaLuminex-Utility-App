@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="Prettier">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="Prettier" />
+              <option name="relativePathToSchema" value="http://json.schemastore.org/prettierrc" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="config.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="file://$USER_HOME$/Documents/AquaLuminexConfig/config.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

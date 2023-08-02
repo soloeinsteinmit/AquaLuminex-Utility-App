@@ -1,6 +1,7 @@
 package com.example.aqualuminexapp.register;
 
 import com.example.aqualuminexapp.AquaLuminexMain;
+import com.example.aqualuminexapp.utils.AppSettings;
 import com.example.aqualuminexapp.utils.EmailValidation;
 import io.github.gleidson28.GNAvatarView;
 import io.github.palexdev.materialfx.controls.MFXRadioButton;
@@ -8,6 +9,7 @@ import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -85,6 +87,8 @@ public class PersonalDetailsController implements Initializable {
         userDetailsAnchorPanePublic = userDetailsAnchorPane;
         RegisterMainController.userName = userNameField;
         RegisterMainController.emailAddress = emailField;
+        RegisterMainController.telephoneNumber = telephoneNumberField;
+        RegisterMainController.profileImg = profileImageField;
 
         // initialize email validation checker
         initializeEmailValidation();
@@ -98,10 +102,22 @@ public class PersonalDetailsController implements Initializable {
         labelErrorMsg.setText(""); // set initial error to an empty string
         labelErrorMsgTelephone.setText("");
 
+        // Add a listener to the selectedToggleProperty of the ToggleGroup
+        gender.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                RadioButton selectedRadioButton = (RadioButton) newValue;
+                RegisterMainController.gender = selectedRadioButton.getText();
+
+            }
+        });
+
         // set avatar images
         setAvatarImages();
 //        Thread setAvatarImagesThread = new Thread(this::setAvatarImages);
 //        setAvatarImagesThread.start();
+
+
+
     }
 
     @FXML
@@ -148,6 +164,8 @@ public class PersonalDetailsController implements Initializable {
         if (selectedImageFile != null) {
             try {
                 profileImage = new Image(Files.newInputStream(selectedImageFile.toPath()));
+
+                RegisterMainController.profileImagePath = selectedImageFile.getPath();
 
                 browseLabel.setVisible(false);
                 addImageButton.setVisible(false);
@@ -317,9 +335,9 @@ public class PersonalDetailsController implements Initializable {
             if (newText.matches(TELEPHONE_PATTERN)) {
                 labelErrorMsgTelephone.setText("");
                 errorTelephoneImg.setVisible(false);
-                System.out.println(newText + " hh");
-                System.out.println(change.getText() + " jjj");
-                userNameField.setText(change.getText());
+                //System.out.println(newText + " hh");
+                //System.out.println(change.getText() + " jjj");
+                //userNameField.setText(change.getText());
 
                 StringBuilder formattedText = new StringBuilder();
                 int digitCount = 0;
@@ -361,12 +379,12 @@ public class PersonalDetailsController implements Initializable {
         telephoneNumberField.setTextFormatter(telephoneFormatter);
 
     }
-
+    String imagePath;
     private void setAvatarImages(){
         // Create ImageViews and add images to them
         ImageView[] imageViews = new ImageView[8];
         for (int i = 0; i < 8; i++) {
-//            Image image = new Image("file:images/avatar" + (i + 1) + ".png");
+
             Image image = new Image("com/example/aqualuminexapp/images/avatar"+(i + 1)+".png");
             imageViews[i] = new ImageView(image);
             imageViews[i].setFitWidth(40);
@@ -375,11 +393,13 @@ public class PersonalDetailsController implements Initializable {
             // Set event handler for each ImageView
             int finalI = i;
             imageViews[i].setOnMouseClicked(event -> {
-                // Set the clicked image as the profile image for all ImageViews
-//                for (ImageView imageView : imageViews) {
-//                    imageView.setImage(imageViews[finalI].getImage());
-//                }
+                imagePath = "com/example/aqualuminexapp/images/avatar"+ (finalI) +".png";
+
                 profileImageField.setImage(imageViews[finalI].getImage());
+                RegisterMainController.profileImagePath = imagePath;
+
+                System.out.println("Image path here - "+ imagePath);
+
                 browseLabel.setVisible(false);
                 addImageButton.setVisible(false);
                 normalLabel.setVisible(false);
@@ -390,5 +410,12 @@ public class PersonalDetailsController implements Initializable {
 
             avatarGridPane.add(imageViews[i], i % 4, i / 4);
         }
+    }
+
+    private void initAppSettingsDefaultValues(){
+        AppSettings appSettings = AppSettings.getAppSettings();
+        userNameField.setText(String.valueOf(appSettings.getUserName()));
+        emailField.setText(String.valueOf(appSettings.getEmail()));
+        telephoneNumberField.setText(String.valueOf(appSettings.getTelephoneNumber()));
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -50,7 +51,7 @@
                                       <Font name="Segoe UI Semibold" size="13.0" />
                                   </font>
                               </Label>
-                              <MFXTextField floatMode="DISABLED" layoutX="42.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="304.0" promptText="Enter account Id" stylesheets="@css/login.css">
+                              <MFXTextField fx:id="accountIdTextField" floatMode="DISABLED" layoutX="42.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="304.0" promptText="Enter account Id" stylesheets="@css/login.css">
                                   <font>
                                       <Font name="Segoe UI Semibold" size="13.0" />
                                   </font>
@@ -61,7 +62,7 @@
                                       <Insets />
                                   </opaqueInsets>
                               </MFXTextField>
-                              <MFXTextField floatMode="DISABLED" layoutX="42.0" layoutY="221.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="304.0" promptText="Enter password" stylesheets="@css/login.css">
+                              <MFXPasswordField fx:id="passwordField" floatMode="DISABLED" layoutX="42.0" layoutY="221.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="304.0" promptText="Enter password" stylesheets="@css/login.css">
                                   <font>
                                       <Font name="Segoe UI Semibold" size="13.0" />
                                   </font>
@@ -71,7 +72,7 @@
                                   <opaqueInsets>
                                       <Insets />
                                   </opaqueInsets>
-                              </MFXTextField>
+                              </MFXPasswordField>
                               <MFXButton id="login-button" accessibleRole="BUTTON" layoutX="40.0" layoutY="308.0" onMouseClicked="#loginUser" prefHeight="40.0" prefWidth="305.0" stylesheets="@css/login.css" text="Login now" textFill="WHITE">
                                   <font>
                                       <Font name="Segoe UI Semibold" size="13.0" />

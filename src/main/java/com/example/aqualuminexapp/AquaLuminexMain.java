@@ -2,6 +2,7 @@ package com.example.aqualuminexapp;
 
 import com.example.aqualuminexapp.dashboard.home.HomeController;
 import com.example.aqualuminexapp.splashscreen.ProgressBarCounterTask;
+import com.example.aqualuminexapp.utils.AppSettings;
 import io.github.palexdev.materialfx.controls.MFXProgressBar;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
@@ -25,6 +26,7 @@ import javafx.util.Duration;
 import javax.sound.sampled.*;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -56,7 +58,8 @@ public class AquaLuminexMain extends Application implements Initializable {
 //        LauncherImpl.launchApplication(AquaLuminexMain.class, MyPreloader.class, args);
         launch();
     }
-
+    static  AppSettings appSettings;
+    public static Stage messageToastStage;
     public static void setRoot(Stage stage) throws IOException {
         Parent root = loadFXML("login");
 
@@ -65,6 +68,7 @@ public class AquaLuminexMain extends Application implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initStyle(StageStyle.DECORATED);
+        messageToastStage = stage;
 
         // Set the default app icon
         String iconPath = "com/example/aqualuminexapp/images/logo_only.png"; // Replace 'icon.png' with your icon
@@ -82,8 +86,18 @@ public class AquaLuminexMain extends Application implements Initializable {
             * we close the thread task
             * */
             if (HomeController.isSchedulerStarted){
+                DecimalFormat df = new DecimalFormat("#.##");
                 System.out.println("Scheduler Thread shutdown from main app");
-                HomeController.scheduler.shutdown();
+
+                appSettings.setWaterMeterPercent(Double.parseDouble(df.format(HomeController.waterProgressValue)));
+                System.out.println(df.format(HomeController.waterProgressValue) + " water progress");
+                appSettings.setElectricityMeterPercent(Double.parseDouble(df.format(HomeController.electricityProgressValue)));
+                AppSettings.writeAppSettingsToConfig(appSettings);
+
+                HomeController.schedulerWaterMeter.shutdown();
+                HomeController.schedulerElectricityMeter.shutdown();
+
+
             }
 
         });
@@ -130,6 +144,7 @@ public class AquaLuminexMain extends Application implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        appSettings = AppSettings.getAppSettings();
 
         sound[0] = getClass().getResource("intro.wav");
         invokeControlCounterTask();

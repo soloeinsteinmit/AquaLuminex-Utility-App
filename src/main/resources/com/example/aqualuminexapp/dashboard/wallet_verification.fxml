@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="verificationAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.WalletVerificationController">
+   <children>
+      <MFXButton id="login-button" accessibleRole="BUTTON" layoutX="269.0" layoutY="369.0" onMouseClicked="#verifyOtpCode" prefHeight="40.0" prefWidth="284.0" stylesheets="@../css/login.css" text="VERIFY" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="13.0" />
+         </font>
+      </MFXButton>
+      <VBox alignment="CENTER" layoutX="98.0" layoutY="84.0" spacing="10.0">
+         <children>
+            <Label text="VERIFICATION">
+               <font>
+                  <Font name="Segoe UI Semibold" size="46.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="625.0" text="Just a little more to finish. Enter the four digit verification code that we have sent to email (the one you used to register this account)" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <GridPane fx:id="otpFieldsGrid" alignment="CENTER" hgap="50.0" layoutX="206.0" layoutY="262.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="60.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Label alignment="CENTER" layoutX="36.0" layoutY="480.0" onMouseClicked="#backToAddNewWallet" text="Back" textFill="#27267c" underline="true">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+   </children>
+</AnchorPane>
