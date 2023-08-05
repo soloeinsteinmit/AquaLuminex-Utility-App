@@ -10,133 +10,139 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.DashboardController">
-   <top>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="45.0" fitWidth="151.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.685482025146484" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="10.0">
-               <image>
-                  <Image url="@../images/logo.png" />
-               </image>
-            </ImageView>
-            <HBox alignment="CENTER" layoutX="743.0" layoutY="4.0" spacing="8.0">
+<StackPane fx:id="dashboardRootStackPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.DashboardController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0">
+         <top>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
                <children>
-                  <GNAvatarView fx:id="profileImage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="45.0" stroke="#ffffff00" strokeWidth="0.0" type="CIRCLE">
+                  <ImageView fitHeight="45.0" fitWidth="151.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.685482025146484" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="10.0">
                      <image>
-                        <Image url="@../images/avatar3.png" />
+                        <Image url="@../images/logo.png" />
                      </image>
-                  </GNAvatarView>
-                  <VBox alignment="CENTER_LEFT" spacing="3.0">
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="743.0" layoutY="8.0" spacing="8.0">
                      <children>
-                        <Label fx:id="usernameLabel" text="Scott Stiles">
-                           <font>
-                              <Font name="Segoe UI Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="emailLabel" text="sc0ttstiles@gmail.com" textFill="#393939">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="13.0" />
-                           </font>
-                        </Label>
+                        <GNAvatarView fx:id="profileImage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" stroke="#ffffff00" strokeWidth="0.0" type="CIRCLE">
+                           <image>
+                              <Image url="@../images/avatar3.png" />
+                           </image>
+                        </GNAvatarView>
+                        <VBox alignment="CENTER_LEFT" spacing="3.0">
+                           <children>
+                              <Label fx:id="usernameLabel" text="Scott Stiles">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="emailLabel" text="sc0ttstiles@gmail.com" textFill="#393939">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
-                  </VBox>
+                  </HBox>
                </children>
-            </HBox>
-         </children></AnchorPane>
-   </top>
-   <center>
-      <TabPane id="tabPane" prefHeight="542.0" prefWidth="1000.0" rotateGraphic="true" side="LEFT" style="-fx-background-color: #dddddd;" stylesheets="@../css/tabPaneStyleSheet.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab closable="false">
-             <content>
-                <fx:include source="home/home.fxml" />
-             </content>
-
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/home.png" />
-                           </image>
-                        </ImageView>
-                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Home" />
-                     </children>
-                  </HBox>
-               </graphic>
-          </Tab>
-            <Tab closable="false">
-               <content>
-                  <fx:include source="meter/meters.fxml" />
-               </content>
-<!--               <content>-->
-<!--                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="841.0" style="-fx-background-color: navy;" />-->
-<!--               </content>-->
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/meter.png" />
-                           </image>
-                        </ImageView>
-                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Meter" />
-                     </children>
-                  </HBox>
-               </graphic>
-            </Tab>
-            <Tab closable="false">
-               <content>
-                  <fx:include source="transactions/transactions.fxml" />
-               </content>
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/transactions.png" />
-                           </image>
-                        </ImageView>
-                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Transactions" />
-                     </children>
-                  </HBox>
-               </graphic>
-            </Tab>
-            <Tab closable="false">
-               <content>
-                  <fx:include source="wallets/wallets.fxml" />
-               </content>
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/wallets.png" />
-                           </image>
-                        </ImageView>
-                        <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Wallets" />
-                     </children>
-                  </HBox>
-               </graphic>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </center>
-   <bottom>
-      <AnchorPane prefHeight="23.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="46.0" layoutY="-13.0" onMouseClicked="#logout" text="Logout" underline="true" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold" size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Label>
-         </children>
-      </AnchorPane>
-   </bottom>
-</BorderPane>
+            </AnchorPane>
+         </top>
+         <center>
+            <TabPane id="tabPane" prefHeight="542.0" prefWidth="1000.0" rotateGraphic="true" side="LEFT" style="-fx-background-color: #dddddd;" stylesheets="@../css/tabPaneStyleSheet.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab closable="false">
+                   <content>
+                      <fx:include source="home/home.fxml" />
+                   </content>
+      
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                              <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Home" />
+                           </children>
+                        </HBox>
+                     </graphic>
+                </Tab>
+                  <Tab closable="false">
+                     <content>
+                        <fx:include source="meter/meters.fxml" />
+                     </content>
+      <!--               <content>-->
+      <!--                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="841.0" style="-fx-background-color: navy;" />-->
+      <!--               </content>-->
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/meter.png" />
+                                 </image>
+                              </ImageView>
+                              <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Meter" />
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </Tab>
+                  <Tab closable="false">
+                     <content>
+                        <fx:include source="transactions/transactions.fxml" />
+                     </content>
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/transactions.png" />
+                                 </image>
+                              </ImageView>
+                              <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Transactions" />
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </Tab>
+                  <Tab closable="false">
+                     <content>
+                        <fx:include source="wallets/wallets.fxml" />
+                     </content>
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" minWidth="118.0" prefWidth="118.0" styleClass="hBox_content" stylesheets="@../css/tabPaneStyleSheet.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/wallets.png" />
+                                 </image>
+                              </ImageView>
+                              <Label styleClass="tabName" stylesheets="@../css/tabPaneStyleSheet.css" text="Wallets" />
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="23.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="46.0" layoutY="-13.0" onMouseClicked="#logout" text="Logout" underline="true" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>

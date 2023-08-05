@@ -5,6 +5,7 @@ import com.example.aqualuminexapp.database_utils.LoginDataAccess;
 import com.example.aqualuminexapp.register.RegisterMainController;
 import com.example.aqualuminexapp.utils.AppSettings;
 import com.example.aqualuminexapp.utils.ChangingScenes;
+import com.example.aqualuminexapp.utils.ShowToastMessage;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,8 +42,12 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        stackContainer = parentStackContainer;
         RegisterMainController.parentStack = parentStackContainer;
+        ShowToastMessage.parentToastStack = parentStackContainer;
 
         appSettings = AppSettings.getAppSettings();
+
+        passwordField.setText("kofi.t");
+        accountIdTextField.setText("UF-477523");
     }
 
 
@@ -64,13 +69,22 @@ public class LoginController implements Initializable {
                 loadFromConfig = true;
                 LoginDataAccess.getLoggedUserId(accId); // gets account id and stores it in loggedAccountID
                 ChangingScenes.changeWindow(event, DashboardController.class, "dashboard");
+                ShowToastMessage.showToast(AquaLuminexMain.messageToastStage, "Login Successful", 3, 4, 3);
             }
         }
         else if (LoginDataAccess.checkLoginCredential(accountIdTextField.getText(), DigestUtils.sha256Hex(enteredPassword))){
 
             ChangingScenes.changeWindow(event, DashboardController.class, "dashboard");
+            ShowToastMessage.showToast(AquaLuminexMain.messageToastStage, "Login Successful", 3, 4, 3);
+
         }else{
-            System.err.println("Invalid user credential");
+            //System.err.println("Invalid user credential");
+            if (accId.isEmpty() || enteredPassword.isEmpty()){
+
+                ShowToastMessage.showToast(AquaLuminexMain.messageToastStage, "Fill in all the forms", 3, 4, 3);
+            }
+
+
         }
 
 

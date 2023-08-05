@@ -55,7 +55,8 @@ public class MetersController implements Initializable {
 
     @FXML
     void payBill(MouseEvent event) {
-
+        ChangingScenes.translateScene(TopUpPostPaidController.class, metersParentStackPane, metersAnchorPane,
+                "top_up_postpaid_water", 'f');
     }
 
     @FXML
@@ -63,4 +64,6 @@ public class MetersController implements Initializable {
         ChangingScenes.translateScene(TopUpPrepaidController.class, metersParentStackPane, metersAnchorPane,
                 "top_up_prepaid", 'f');
     }
+
+
 }

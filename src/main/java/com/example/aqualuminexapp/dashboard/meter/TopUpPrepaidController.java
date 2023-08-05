@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -32,7 +33,16 @@ public class TopUpPrepaidController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        WalletCardsController.scrollPane = topUpScrollPane;
+
         WalletCardsController.loadWalletsCards(topUpScrollPane);
+
+
+        try {
+            WalletCardsController.initializeWalletData(topUpScrollPane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

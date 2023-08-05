@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -36,7 +37,15 @@ public class WalletsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //initia
         duplicateParentStack = parentWalletStack;
+        WalletCardsController.scrollPane = walletsScrollPane;
+
+        try {
+            WalletCardsController.initializeWalletData(walletsScrollPane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         WalletCardsController.loadWalletsCards(walletsScrollPane);
         WalletCardsController.walletCardsStackPane = parentWalletStack;

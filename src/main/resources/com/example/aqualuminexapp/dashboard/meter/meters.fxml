@@ -11,12 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="metersParentStackPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.meter.MetersController">
    <children>
       <AnchorPane fx:id="metersAnchorPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20; -fx-background-color: #fff;">
          <children>
-            <HBox layoutX="14.0" layoutY="27.0">
+            <HBox layoutX="43.0" layoutY="44.0">
                <children>
                   <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
                      <children>
@@ -98,7 +97,6 @@
                               <Image url="@../../images/add%20prepaid.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="34.0" layoutY="36.0" text="Add prepaid meter" textFill="WHITE" />
                         <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="146.0" style="-fx-background-color: transaction;" />
                         <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="135.0" layoutY="153.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
                            <graphic>
@@ -112,6 +110,16 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </MFXButton>
+                        <VBox layoutX="25.0" layoutY="28.0">
+                           <children>
+                              <Label fx:id="meterNameLabel_21" text="Unregistered">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="meterIdLabel_21" text="?????????" textFill="WHITE" />
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                   <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
@@ -121,7 +129,6 @@
                               <Image url="@../../images/add%20postpaid.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="28.0" layoutY="37.0" text="Add postpaid meter" textFill="WHITE" />
                         <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="116.0" layoutY="135.0" style="-fx-background-color: transaction;" />
                         <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="126.0" layoutY="152.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
                            <graphic>
@@ -135,11 +142,21 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </MFXButton>
+                        <VBox layoutX="28.0" layoutY="20.0">
+                           <children>
+                              <Label fx:id="meterNameLabel_22" text="Unregistered">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="meterIdLabel_22" text="?????????" textFill="WHITE" />
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </children>
             </HBox>
-            <HBox layoutX="14.0" layoutY="297.0">
+            <HBox layoutX="43.0" layoutY="303.0">
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="172.0">
                      <children>
@@ -197,6 +214,16 @@
                   </AnchorPane>
                </children>
             </HBox>
+            <Label layoutX="59.0" layoutY="272.0" text="Water Meter">
+               <font>
+                  <Font name="Segoe UI Semibold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="31.0" text="Prepaid Meter">
+               <font>
+                  <Font name="Segoe UI Semibold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

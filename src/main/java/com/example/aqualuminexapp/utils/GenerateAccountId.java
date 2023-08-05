@@ -21,4 +21,8 @@ public class GenerateAccountId {
     public String generateAccountId() {
         return randomizeCharacters() + "-" + randomizeNumbers(111111, 999999);
     }
+
+    public String generateOTP(){
+        return randomizeNumbers(1111, 9999);
+    }
 }

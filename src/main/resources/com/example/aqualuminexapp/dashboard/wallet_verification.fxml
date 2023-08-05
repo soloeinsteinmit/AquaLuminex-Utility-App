@@ -10,9 +10,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane fx:id="verificationAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.WalletVerificationController">
    <children>
-      <MFXButton id="login-button" accessibleRole="BUTTON" layoutX="269.0" layoutY="369.0" onMouseClicked="#verifyOtpCode" prefHeight="40.0" prefWidth="284.0" stylesheets="@../css/login.css" text="VERIFY" textFill="WHITE">
+      <MFXButton id="login-button" fx:id="verifyOTP" accessibleRole="BUTTON" layoutX="269.0" layoutY="369.0" onMouseClicked="#verifyOtpCode" prefHeight="40.0" prefWidth="284.0" stylesheets="@../css/login.css" text="VERIFY" textFill="WHITE">
          <font>
             <Font name="Segoe UI Semibold" size="13.0" />
          </font>

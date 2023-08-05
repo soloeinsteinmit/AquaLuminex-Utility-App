@@ -36,7 +36,7 @@ public class AquaLuminexMain extends Application implements Initializable {
     public static AtomicInteger getQuaterLoaderInt = new AtomicInteger();
     public static Stage fileChooserStage;
     private static Stage pStage;
-    int firstQuarter = (int) (ProgressBarCounterTask.COUNT_LIMIT / 3);
+    int firstQuarter = (int) (ProgressBarCounterTask.COUNT_LIMIT);
     //    public static final int COUNT_LIMIT = 500000;
     private ProgressBarCounterTask controlCounterTask;
     //    int firstQuarter = 166666666;
@@ -108,9 +108,8 @@ public class AquaLuminexMain extends Application implements Initializable {
         pStage.close();
         stage.setResizable(false);
 
-        for (int i = 1; i <= 1; i++) {
-            stage.show();
-        }
+        stage.show();
+
 
 
     }
@@ -177,6 +176,7 @@ public class AquaLuminexMain extends Application implements Initializable {
         circlePath.start();
 
     }
+    public boolean setRootCalled = false; // Add a boolean flag to keep track if setRoot has already been called
 
     private void invokeControlCounterTask() {
         FadeTransition fadeTransition = new FadeTransition();
@@ -191,28 +191,31 @@ public class AquaLuminexMain extends Application implements Initializable {
         controlCounterTask = new ProgressBarCounterTask();
         Thread counterTaskThread = new Thread(controlCounterTask);
 
+
         progressBarCounter.progressProperty().bind(controlCounterTask.progressProperty());
         controlCounterTask.valueProperty().addListener((observableValue, aLong, t1) -> {
             fadeTransition.play();
 
-            if (t1 >= firstQuarter * 0.5) {
+            if (t1 >= firstQuarter * 0.25) {
                 loadingMessage.setText("Getting things ready...");
             }
-            if (t1 >= firstQuarter * 1.9) {
+            if (t1 >= firstQuarter * 0.5) {
                 loadingMessage.setText("Almost there...");
             }
-            if (t1 >= firstQuarter * 2.4) {
+            if (t1 >= firstQuarter * 0.75) {
                 loadingMessage.setText("Setting things up...");
             }
-            if (t1 >= firstQuarter * 2.9) {
-
+            if (t1 >= firstQuarter) {
                 loadingMessage.setText("Done");
+                System.out.println(t1+" here");
+                System.out.println(firstQuarter * 2.9 + " qqq");
             }
 
-            if (controlCounterTask.isDone()) {
+            if (controlCounterTask.isDone() && !setRootCalled) {
+                System.out.println(t1 +" tooo");
                 controlCounterTask.cancel();
+                setRootCalled = true; // Set the flag to true to avoid calling setRoot multiple times
                 try {
-
                     setRoot(new Stage());
                 } catch (IOException e) {
                     throw new RuntimeException(e);

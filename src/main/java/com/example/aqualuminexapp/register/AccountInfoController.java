@@ -56,7 +56,7 @@ public class AccountInfoController implements Initializable {
     @FXML
     void generateId(MouseEvent event) throws Exception {
         TimerClass setTimer = new TimerClass(timerLabel, generateIdBtn);
-
+        SendEmail.verifyWallet = false;
         Thread timerThread = new Thread(setTimer::createTimeline);
         timerThread.start();
 
