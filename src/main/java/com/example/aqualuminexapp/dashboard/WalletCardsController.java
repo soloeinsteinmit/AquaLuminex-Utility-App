@@ -4,13 +4,14 @@ import com.example.aqualuminexapp.database_utils.WalletsDataAccess;
 import com.example.aqualuminexapp.utils.ChangingScenes;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
-import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -109,6 +110,7 @@ public class WalletCardsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         walletsDataAccess = new WalletsDataAccess();
+        initializeData();
 
         //walletsDataAccess.mtnCardInfo();
         //walletsDataAccess.tigoCardInfo();
@@ -123,82 +125,78 @@ public class WalletCardsController implements Initializable {
     }
 
     public volatile boolean setContent = false;
-    //UF-477523
-    public static void initializeWalletData(MFXScrollPane scrollPane) throws IOException {
-        FXMLLoader loader = new FXMLLoader(WalletCardsController.class.getResource("wallet_cards.fxml"));
-        Parent content = loader.load();
-
-        WalletCardsController controller = loader.getController();
-        controller.initializeData();
-
-
-        Platform.runLater(()->{
-
-
-        // Bind MTN account info labels to observable properties
-        controller.getMtnAccName().textProperty().bind(controller.mtnAccNameProperty());
-        System.out.println(controller.getMtnAccName() + " jereeeeeeeee");
-        controller.getMtnAccNumber().textProperty().bind(controller.mtnAccNumberProperty());
-
-        // Bind tigo account info labels to observable properties
-        controller.getTigoAccName().textProperty().bind(controller.tigoAccNameProperty());
-        controller.getTigoAccNumber().textProperty().bind(controller.tigoAccNumberProperty());
-
-        // Bind voda account info labels to observable properties
-        controller.getVodaAccName().textProperty().bind(controller.vodaAccNameProperty());
-        controller.getVodaAccNumber().textProperty().bind(controller.vodaAccNumberProperty());
-    });
-
-
-        scrollPane.setContent(content);
-
-
-    }
-
-    public static boolean isDataLoaded = false;
     public void initializeData(){
         walletsDataAccess.mtnCardInfo();
         walletsDataAccess.tigoCardInfo();
         walletsDataAccess.vodaCardInfo();
+        initializeDataIntoArrays();
 
         System.out.println(Arrays.toString(WalletsDataAccess.mtnCardInfo) + " -- mtn");
         System.out.println(Arrays.toString(WalletsDataAccess.tigoCardInfo) + " -- tigo");
         System.out.println(Arrays.toString(WalletsDataAccess.vodaCardInfo) + " -- voda");
 
-        // Set MTN account info using observable properties
-        String[] mtnInfo = WalletsDataAccess.mtnCardInfo;
-        if (mtnInfo[0] == null) {
-            mtnAccNameProperty.set("Unregistered");
-            mtnAccNumberProperty.set("000 000 0000");
-        } else {
-            mtnAccNameProperty.set(mtnInfo[0]);
-            mtnAccNumberProperty.set(mtnInfo[1]);
-        }
-        // Set voda account info using observable properties
-        String[] vodaInfo = WalletsDataAccess.vodaCardInfo;
-        if (vodaInfo[0] == null) {
-            vodaAccNameProperty.set("Unregistered");
-            vodaAccNumberProperty.set("000 000 0000");
-        } else {
-            vodaAccNameProperty.set(vodaInfo[0]);
-            vodaAccNumberProperty.set(vodaInfo[1]);
-        }
+        if (WalletsDataAccess.mtnCardInfo[0] == null) {
+            mtnAccName.setText("Unregistered");
+            mtnAccNumber.setText("000 000 0000");
 
-        // Set tigo account info using observable properties
-        String[] tigoInfo = WalletsDataAccess.tigoCardInfo;
-        if (tigoInfo[0] == null) {
-            tigoAccNameProperty.set("Unregistered");
-            tigoAccNumberProperty.set("000 000 0000");
+            addWalletButtons.get(0).setVisible(true); // mtn
+            deleteWalletButtons.get(0).setVisible(false); // mtn
         } else {
-            tigoAccNameProperty.set(tigoInfo[0]);
-            tigoAccNumberProperty.set(tigoInfo[1]);
-        }
+            mtnAccName.setText(WalletsDataAccess.mtnCardInfo[0]);
+            mtnAccNumber.setText(WalletsDataAccess.mtnCardInfo[1]);
+            //addMTNAcc.setVisible(false);
+            if (scrollPane.getId().equals("topUpScrollPane") || scrollPane.getId().equals("topUpPostPaidScrollPane")){
+                //System.out.println(scrollPane.getId() + " id here");
+                deleteWalletButtons.get(0).setVisible(false); // mtn
+            }else {
+                addWalletButtons.get(0).setVisible(false); // mtn
+                deleteWalletButtons.get(0).setVisible(true); // mtn
+            }
 
+        }
+        if (WalletsDataAccess.tigoCardInfo[0] == null) {
+            tigoAccName.setText("Unregistered");
+            tigoAccNumber.setText("000 000 0000");
+            addWalletButtons.get(1).setVisible(true); // tigo
+            deleteWalletButtons.get(1).setVisible(false); // tigo
+        } else {
+            tigoAccName.setText(WalletsDataAccess.tigoCardInfo[0]);
+            tigoAccNumber.setText(WalletsDataAccess.tigoCardInfo[1]);
+            if (scrollPane.getId().equals("topUpScrollPane") || scrollPane.getId().equals("topUpPostPaidScrollPane")){
+                //System.out.println(scrollPane.getId() + " id here");
+                deleteWalletButtons.get(1).setVisible(false); // tigo
+            }else {
+                addWalletButtons.get(1).setVisible(false); // tigo
+                deleteWalletButtons.get(1).setVisible(true); // tigo
+            }
+        }
+        if (WalletsDataAccess.vodaCardInfo[0] == null) {
+            vodaAccName.setText("Unregistered");
+            vodaAccNumber.setText("000 000 0000");
+            addWalletButtons.get(2).setVisible(true); // voda
+            deleteWalletButtons.get(2).setVisible(false); // voda
+        } else {
+            vodaAccName.setText(WalletsDataAccess.vodaCardInfo[0]);
+            vodaAccNumber.setText(WalletsDataAccess.vodaCardInfo[1]);
+            if (scrollPane.getId().equals("topUpScrollPane") || scrollPane.getId().equals("topUpPostPaidScrollPane")){
+                //System.out.println(scrollPane.getId() + " id here");
+                deleteWalletButtons.get(2).setVisible(false); // voda
+            }else {
+                addWalletButtons.get(2).setVisible(false); // voda
+                deleteWalletButtons.get(2).setVisible(true); // voda
+            }
+        }
     }
-    public void initialize()  {
+    //UF-477523
 
-            addWallet();
-            deleteWallet();
+
+    public void initializeDataIntoArrays(){
+        addWallet();
+        deleteWallet();
+    }
+    public void initialize() {
+
+            initializeDataIntoArrays();
 
         try {
             aqBalanceCard.setText("GHC "+ walletsDataAccess.retrieveAQBalance() +".00");
@@ -229,9 +227,9 @@ public class WalletCardsController implements Initializable {
                 controller.getAddVodaAcc().setVisible(true);
             }
 
+            //controller.initializeWalletData(scrollPane);
 
-
-            isDataLoaded = true;
+            //isDataLoaded = true;
             controller.initialize(); // Call any initialization method in the controller if needed
 
 
@@ -241,7 +239,7 @@ public class WalletCardsController implements Initializable {
         }
     }
 
-
+    public static String cardName;
     private void addWallet(){
         addButtonsToArray();
         for (int i = 0; i < addWalletButtons.size(); i++){
@@ -254,11 +252,11 @@ public class WalletCardsController implements Initializable {
 
 
                         walletInfo.add(0, "mtn");
+                        cardName = "addMTNAcc";
 
-
-                        deleteWalletButtons.get(finalI).setVisible(true);
-                        addWalletButtons.get(finalI).setVisible(false);
-                        System.out.println("addMTNAcc");
+                        //deleteWalletButtons.get(finalI).setVisible(true);
+                        //addWalletButtons.get(finalI).setVisible(false);
+                        System.out.println(cardName);
                     }
                     case "addTigoAcc" -> {
                         ChangingScenes.translateScene(AddNewWalletController.class, walletCardsStackPane,
@@ -266,9 +264,10 @@ public class WalletCardsController implements Initializable {
 
                         walletInfo.add(0, "tigo");
 
-                        deleteWalletButtons.get(finalI).setVisible(true);
-                        addWalletButtons.get(finalI).setVisible(false);
-                        System.out.println("addTigoAcc");
+                        //deleteWalletButtons.get(finalI).setVisible(true);
+                        //addWalletButtons.get(finalI).setVisible(false);
+                        cardName = "addTigoAcc";
+                        System.out.println(cardName);
                     }
                     case "addVodaAcc" -> {
                         ChangingScenes.translateScene(AddNewWalletController.class, walletCardsStackPane,
@@ -276,9 +275,10 @@ public class WalletCardsController implements Initializable {
 
                         walletInfo.add(0, "voda");
 
-                        deleteWalletButtons.get(finalI).setVisible(true);
-                        addWalletButtons.get(finalI).setVisible(false);
-                        System.out.println("addVodaAcc");
+                        //deleteWalletButtons.get(finalI).setVisible(true);
+                        //addWalletButtons.get(finalI).setVisible(false);
+                        cardName = "addVodaAcc";
+                        System.out.println(cardName);
                     }
 
                 }
@@ -287,23 +287,73 @@ public class WalletCardsController implements Initializable {
         }
         System.out.println(walletInfo);
     }
+
     private void deleteWallet(){
-        addDeleteButtonsToArray();
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Wallet Deletion Confirmation");
+        confirmationAlert.setHeaderText("Are you sure you want to delete this wallet?");
+        confirmationAlert.setContentText("Click OK to delete wallet or Cancel to go close alert");
+
+
+        deleteButtonsToArray();
         for (int i = 0; i < deleteWalletButtons.size(); i++){
             int finalI = i;
             deleteWalletButtons.get(i).setOnMouseClicked(mouseEvent -> {
                 switch (deleteWalletButtons.get(finalI).getId()) {
                     case "mtnDeleteBtn" -> {
+                        confirmationAlert.showAndWait().ifPresent(reponse ->{
+                            if (reponse == ButtonType.OK){
+                                Thread deleteAccountThread = new Thread(() ->{
+                                    walletsDataAccess.deleteWalletAccount(mtnAccName.getText());
+                                    walletsDataAccess.deletWalletBalance("mtn");
+                                });
+                                mtnAccName.setText("Unregistered");
+                                mtnAccNumber.setText("000 000 0000");
+                                deleteAccountThread.start();
+
+                            }else if (reponse == ButtonType.CANCEL){
+                                confirmationAlert.close();
+                            }
+                        });
+
                         deleteWalletButtons.get(finalI).setVisible(false);
                         addWalletButtons.get(finalI).setVisible(true);
                         System.out.println("mtnDeleteBtn");
                     }
                     case "tigoDeleteBtn" -> {
+                        confirmationAlert.showAndWait().ifPresent(reponse ->{
+                            if (reponse == ButtonType.OK){
+                                Thread deleteAccountThread = new Thread(() ->{
+                                    walletsDataAccess.deleteWalletAccount(tigoAccName.getText());
+                                    walletsDataAccess.deletWalletBalance("tigo");
+                                });
+                                tigoAccName.setText("Unregistered");
+                                tigoAccNumber.setText("000 000 0000");
+                                deleteAccountThread.start();
+
+                            }else if (reponse == ButtonType.CANCEL){
+                                confirmationAlert.close();
+                            }
+                        });
                         deleteWalletButtons.get(finalI).setVisible(false);
                         addWalletButtons.get(finalI).setVisible(true);
                         System.out.println("tigoDeleteBtn");
                     }
                     case "vodaDeleteBtn" -> {
+                        confirmationAlert.showAndWait().ifPresent(reponse ->{
+                            if (reponse == ButtonType.OK){
+                                Thread deleteAccountThread = new Thread(() ->{
+                                    walletsDataAccess.deleteWalletAccount(vodaAccName.getText());
+                                    walletsDataAccess.deletWalletBalance("voda");
+                                });
+                                vodaAccName.setText("Unregistered");
+                                vodaAccNumber.setText("000 000 0000");
+                                deleteAccountThread.start();
+
+                            }else if (reponse == ButtonType.CANCEL){
+                                confirmationAlert.close();
+                            }
+                        });
                         deleteWalletButtons.get(finalI).setVisible(false);
                         addWalletButtons.get(finalI).setVisible(true);
                         System.out.println("vodaDeleteBtn");
@@ -320,7 +370,7 @@ public class WalletCardsController implements Initializable {
         addWalletButtons.add(2, addVodaAcc); //voda
     }
 
-    private void addDeleteButtonsToArray(){
+    private void deleteButtonsToArray(){
         deleteWalletButtons.add(0, mtnDeleteBtn); //mtn
         deleteWalletButtons.add(1, tigoDeleteBtn); //tigo
         deleteWalletButtons.add(2, vodaDeleteBtn); //voda

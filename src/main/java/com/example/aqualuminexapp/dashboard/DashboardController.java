@@ -44,6 +44,7 @@ public class DashboardController implements Initializable {
         if (LoginController.loadFromConfig){
             usernameLabel.setText(appSettings.getUserName());
             emailLabel.setText(appSettings.getEmail());
+            System.out.println(appSettings.getProfileImagePath() + " = solooo");
             Image image = new Image(appSettings.getProfileImagePath());
             profileImage.setImage(image);
         }else {

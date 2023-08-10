@@ -37,6 +37,7 @@ public class LoginController implements Initializable {
     @FXML
     private Label registerButton;
     AppSettings appSettings;
+    public static String LOGGED_IN_ACCOUNT_ID;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,8 +47,8 @@ public class LoginController implements Initializable {
 
         appSettings = AppSettings.getAppSettings();
 
-        passwordField.setText("kofi.t");
-        accountIdTextField.setText("UF-477523");
+        passwordField.setText("solomon");
+        accountIdTextField.setText("VS-483065");
     }
 
 
@@ -63,11 +64,11 @@ public class LoginController implements Initializable {
     @FXML
     void loginUser(MouseEvent event) throws SQLException {
         String enteredPassword = passwordField.getText();
-        String accId = accountIdTextField.getText();
-        if (appSettings.getAccount_id().equals(accId)){
+        LOGGED_IN_ACCOUNT_ID = accountIdTextField.getText();
+        if (appSettings.getAccount_id().equals(LOGGED_IN_ACCOUNT_ID)){
             if (appSettings.getPassword().equals(DigestUtils.sha256Hex(enteredPassword))){
                 loadFromConfig = true;
-                LoginDataAccess.getLoggedUserId(accId); // gets account id and stores it in loggedAccountID
+                LoginDataAccess.getLoggedUserId(LOGGED_IN_ACCOUNT_ID); // gets account id and stores it in loggedAccountID
                 ChangingScenes.changeWindow(event, DashboardController.class, "dashboard");
                 ShowToastMessage.showToast(AquaLuminexMain.messageToastStage, "Login Successful", 3, 4, 3);
             }
@@ -79,7 +80,7 @@ public class LoginController implements Initializable {
 
         }else{
             //System.err.println("Invalid user credential");
-            if (accId.isEmpty() || enteredPassword.isEmpty()){
+            if (LOGGED_IN_ACCOUNT_ID.isEmpty() || enteredPassword.isEmpty()){
 
                 ShowToastMessage.showToast(AquaLuminexMain.messageToastStage, "Fill in all the forms", 3, 4, 3);
             }

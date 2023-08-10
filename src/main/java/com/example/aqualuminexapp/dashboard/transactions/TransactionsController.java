@@ -130,8 +130,13 @@ public class TransactionsController implements Initializable {
 
             //controller.getMeterNameLabel().setText("Hello Suckers");
             sum += Double.parseDouble(controller.getAmountPurchasedLabel().getText());
+            if (TransactionsDataAccess.transactionsInfo.isEmpty()){
+                totalPriceLabel.setText("00.00");
+            }else {
+                totalPriceLabel.setText(String.valueOf(df.format(sum)));
+            }
 
-            totalPriceLabel.setText(String.valueOf(df.format(sum)));
+
             transactionsCardVbox.getChildren().add(nodes[i]);
 
             if(i == CardsData.transactionsCardData().size() - 1){

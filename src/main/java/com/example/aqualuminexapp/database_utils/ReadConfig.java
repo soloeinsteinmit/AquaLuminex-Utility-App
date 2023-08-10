@@ -1,5 +1,6 @@
 package com.example.aqualuminexapp.database_utils;
 
+import com.example.aqualuminexapp.LoginController;
 import com.example.aqualuminexapp.utils.AppSettings;
 
 public class ReadConfig {
@@ -16,6 +17,7 @@ public class ReadConfig {
     public static boolean readFromConfig(){
 
         String accountID = settings.getAccount_id();
-        return LoginDataAccess.loggedInAccountID.equals(accountID);
+        System.out.println(LoginDataAccess.loggedInAccountID);
+        return LoginController.LOGGED_IN_ACCOUNT_ID.equals(accountID);
     }
 }

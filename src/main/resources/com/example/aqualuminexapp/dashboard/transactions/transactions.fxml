@@ -30,7 +30,7 @@
                               <Font name="Segoe UI Semibold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="totalPriceLabel" alignment="CENTER" text="5000.90" textAlignment="CENTER">
+                        <Label fx:id="totalPriceLabel" alignment="CENTER" text="00.00" textAlignment="CENTER">
                            <font>
                               <Font name="Segoe UI Semibold" size="20.0" />
                            </font>

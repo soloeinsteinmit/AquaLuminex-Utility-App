@@ -16,7 +16,7 @@
 
 <AnchorPane fx:id="topUpPostpaidAnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aqualuminexapp.dashboard.meter.TopUpPostPaidController">
    <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20;">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20; -fx-background-color: white;">
          <children>
             <Text fill="#fcf8f8" layoutX="361.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" TOP UP" wrappingWidth="80.13671874999989" />
             <VBox alignment="CENTER" layoutX="85.0" layoutY="61.0" spacing="5.0">
@@ -90,8 +90,7 @@
                   <Font name="Lucida Bright Demibold" size="24.0" />
                </font>
             </Label>
-            <MFXScrollPane fx:id="topUpPostPaidScrollPane" layoutX="27.0" layoutY="303.0" prefHeight="198.0"
-                           prefWidth="790.0" vbarPolicy="NEVER" />
+            <MFXScrollPane fx:id="topUpPostPaidScrollPane" layoutX="27.0" layoutY="303.0" prefHeight="198.0" prefWidth="790.0" vbarPolicy="NEVER" />
          </children>
       </Pane>
    </children>

@@ -94,8 +94,14 @@ public class LoginDataAccess {
             resultSet = psCheckUserExist.executeQuery();
             loggedInAccountID = resultSet.getString("user_id");
             if (resultSet.isBeforeFirst()){
-                loggedInAccountID = resultSet.getString("user_id");
-                loggedInUserEmail = resultSet.getString("email");
+                while(resultSet.next()){
+                    loggedInAccountID = resultSet.getString("user_id");
+                    loggedInUserEmail = resultSet.getString("email");
+
+                    System.out.println(loggedInAccountID +" here");
+                    System.out.println(loggedInUserEmail +" here");
+                }
+
             }
         }catch (SQLException e) {
             throw new RuntimeException(e);

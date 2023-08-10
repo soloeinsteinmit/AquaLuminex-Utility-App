@@ -66,20 +66,20 @@
                   </Label>
                </children>
             </VBox>
-            <MFXButton fx:id="mtnDeleteBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="141.0" layoutY="145.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/electricity_96px%201.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </MFXButton>
             <MFXButton fx:id="addMTNAcc" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="142.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
                <graphic>
                   <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/plus_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MFXButton>
+            <MFXButton fx:id="mtnDeleteBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="142.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/electricity_96px%201.png" />
                      </image>
                   </ImageView>
                </graphic>

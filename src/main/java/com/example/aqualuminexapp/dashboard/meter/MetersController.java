@@ -16,22 +16,22 @@ import java.util.ResourceBundle;
 public class MetersController implements Initializable {
 
     @FXML
-    private MFXButton deleteMeter_1_btn;
+    private MFXButton addElectricityMeter;
 
     @FXML
-    private MFXButton deleteMeter_2_btn;
+    private MFXButton addWaterMeter;
 
     @FXML
-    private Label meterIdLabel_1;
+    private MFXButton deleteElectricityMeter;
 
     @FXML
-    private Label meterIdLabel_2;
+    private MFXButton deleteWaterMeter;
 
     @FXML
-    private Label meterNameLabel_1;
+    private Label meterIdLabel;
 
     @FXML
-    private Label meterNameLabel_2;
+    private Label meterNameLabel;
 
     @FXML
     private AnchorPane metersAnchorPane;
@@ -45,25 +45,65 @@ public class MetersController implements Initializable {
     @FXML
     private ImageView prepaidMeter1_img;
 
+    @FXML
+    private Label waterMeterId;
+
+    @FXML
+    private Label waterMeterName;
+    public static StackPane METERS_STACKPANE;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TopUpPrepaidController.topUpStack = metersParentStackPane;
+        //TopUpPrepaidController.topUpStack = metersParentStackPane;
         TopUpPostPaidController.topUpStack = metersParentStackPane;
+        METERS_STACKPANE = metersParentStackPane;
 
     }
 
     @FXML
-    void payBill(MouseEvent event) {
+    void payBill() {
         ChangingScenes.translateScene(TopUpPostPaidController.class, metersParentStackPane, metersAnchorPane,
                 "top_up_postpaid_water", 'f');
     }
 
     @FXML
-    void topUpPrepaid(MouseEvent event) {
+    void topUpPrepaid() {
         ChangingScenes.translateScene(TopUpPrepaidController.class, metersParentStackPane, metersAnchorPane,
                 "top_up_prepaid", 'f');
     }
 
+    @FXML
+    void addElectricityMeter() {
+        ChangingScenes.translateScene(AddElectricityMeterController.class, metersParentStackPane, metersAnchorPane,
+                "addElectricityMeter", 'f');
+    }
 
+    @FXML
+    void addWaterMeter() {
+        ChangingScenes.translateScene(AddElectricityMeterController.class, metersParentStackPane, metersAnchorPane,
+                "addWaterMeter", 'f');
+    }
+
+    @FXML
+    void deleteElectricityMeter(MouseEvent event) {
+
+    }
+
+    @FXML
+    void deleteWaterMeter(MouseEvent event) {
+
+    }
+
+
+    @FXML
+    void openElectricityMeterInfo(){
+        ChangingScenes.translateScene(ElectricityMeterInfoController.class, metersParentStackPane, metersAnchorPane,
+                "electricity_meter_info", 'f');
+    }
+    @FXML
+    void openWaterMeterInfo(){
+        ChangingScenes.translateScene(WaterMeterInfoController.class, metersParentStackPane, metersAnchorPane,
+                "water_meter_info", 'f');
+    }
 }

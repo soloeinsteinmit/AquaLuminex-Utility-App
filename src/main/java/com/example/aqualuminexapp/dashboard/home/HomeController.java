@@ -21,8 +21,8 @@ public class HomeController implements Initializable {
     public static ScheduledExecutorService schedulerElectricityMeter;
     public static boolean isSchedulerStarted = false;
 //    private ProgressIndicator progressIndicator;
-    public static double waterProgressValue;// Initial progress value
-    public static double electricityProgressValue;
+    public static double waterProgressValue = 0.89;// Initial progress value
+    public static double electricityProgressValue = 0.56;
 
     @FXML
     private MFXProgressSpinner electricityProgressSpinner;

@@ -89,9 +89,10 @@ public class AquaLuminexMain extends Application implements Initializable {
                 DecimalFormat df = new DecimalFormat("#.##");
                 System.out.println("Scheduler Thread shutdown from main app");
 
-                appSettings.setWaterMeterPercent(Double.parseDouble(df.format(HomeController.waterProgressValue)));
+                //appSettings.setWaterMeterPercent(Double.parseDouble(df.format(HomeController.waterProgressValue)));
                 System.out.println(df.format(HomeController.waterProgressValue) + " water progress");
-                appSettings.setElectricityMeterPercent(Double.parseDouble(df.format(HomeController.electricityProgressValue)));
+                //appSettings.setElectricityMeterPercent(Double.parseDouble(df.format(HomeController
+                // .electricityProgressValue)));
                 AppSettings.writeAppSettingsToConfig(appSettings);
 
                 HomeController.schedulerWaterMeter.shutdown();

@@ -1,6 +1,6 @@
 package com.example.aqualuminexapp;
 
-import com.example.aqualuminexapp.dashboard.WalletVerificationController;
+import com.example.aqualuminexapp.dashboard.DashboardController;
 import com.example.aqualuminexapp.dashboard.home.HomeController;
 import com.example.aqualuminexapp.utils.AppSettings;
 import javafx.application.Application;
@@ -20,8 +20,8 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(DashboardController.class.getResource("dashboard.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(WalletVerificationController.class.getResource("wallet_verification.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(DashboardController.class.getResource("dashboard.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(WalletVerificationController.class.getResource("wallet_verification.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(WalletVerificationController.class.getResource("wallet_verification" +
 //                ".fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(RegisterMainController.class.getResource("register-main.fxml"));

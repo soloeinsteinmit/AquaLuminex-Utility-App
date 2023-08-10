@@ -1,5 +1,6 @@
 package com.example.aqualuminexapp.database_utils;
 
+import com.example.aqualuminexapp.LoginController;
 import com.example.aqualuminexapp.utils.AppSettings;
 
 import java.sql.*;
@@ -302,4 +303,78 @@ public class WalletsDataAccess {
             }
         }
     }
+
+    public void deleteWalletAccount(String walletName){
+        Connection connection = null;
+        PreparedStatement psDeleteWallet = null;
+
+        try {
+            connection = DriverManager.getConnection(DBConstants.databaseURL);
+            psDeleteWallet = connection.prepareStatement("""
+                    DELETE FROM wallet_account
+                    WHERE wallet_name = ?;
+                """);
+
+
+
+            psDeleteWallet.setString(1, walletName);
+
+            psDeleteWallet.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            // Make sure to close the connection even if an exception occurs
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (psDeleteWallet != null) {
+                    psDeleteWallet.close();
+                }
+            } catch (SQLException e) {
+                // Handle any errors that occur while closing the connection
+            }
+        }
+    }
+
+    public void deletWalletBalance(String walletId){
+        Connection connection = null;
+        PreparedStatement psDeleteWalletBalance = null;
+
+        try {
+            connection = DriverManager.getConnection(DBConstants.databaseURL);
+            psDeleteWalletBalance = connection.prepareStatement("""
+                    DELETE FROM wallet_balance
+                    WHERE wallet_id = ? AND user_id = ?;
+                """);
+
+            psDeleteWalletBalance.setString(1, walletId);
+            if (ReadConfig.readFromConfig()){
+                psDeleteWalletBalance.setString(2, accountID);
+            }else {
+                accountID = LoginController.LOGGED_IN_ACCOUNT_ID;// account id
+                psDeleteWalletBalance.setString(2, accountID);
+            }
+
+            psDeleteWalletBalance.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            // Make sure to close the connection even if an exception occurs
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (psDeleteWalletBalance != null) {
+                    psDeleteWalletBalance.close();
+                }
+            } catch (SQLException e) {
+                // Handle any errors that occur while closing the connection
+            }
+        }
+    }
+
+
 }

@@ -1,8 +1,8 @@
 package com.example.aqualuminexapp.dashboard;
 
 import com.example.aqualuminexapp.AquaLuminexMain;
+import com.example.aqualuminexapp.LoginController;
 import com.example.aqualuminexapp.dashboard.wallets.WalletsController;
-import com.example.aqualuminexapp.database_utils.LoginDataAccess;
 import com.example.aqualuminexapp.database_utils.WalletsDataAccess;
 import com.example.aqualuminexapp.utils.ChangingScenes;
 import com.example.aqualuminexapp.utils.SendEmail;
@@ -155,7 +155,7 @@ public class WalletVerificationController implements Initializable {
                             "Successful", 3
                     , 5, 3);
 
-            WalletCardsController.walletInfo.add(3, LoginDataAccess.loggedInAccountID);
+            WalletCardsController.walletInfo.add(3, LoginController.LOGGED_IN_ACCOUNT_ID);
             // If OTP contains at least 3 characters from the matcher, perform some action (e.g., changing scenes)
 
             System.out.println(WalletCardsController.walletInfo);
@@ -177,17 +177,46 @@ public class WalletVerificationController implements Initializable {
                             WalletCardsController.walletInfo.get(3)
                     );
 
+
                     System.out.println("passing data into db");
                     WalletCardsController.loadContent = true;
-                    WalletCardsController.walletInfo.clear();
+
                 }
             });
+            WalletCardsController.walletInfo.clear();
+            /*Platform.runLater( () -> {
+                        FXMLLoader loader = new FXMLLoader(WalletCardsController.class.getResource("wallet_cards.fxml"));
+
+                        WalletCardsController controller = loader.getController();
+                        switch (WalletCardsController.cardName){
+                            case "addMTNAcc" -> {
+                                controller.getMtnAccName().setText(WalletCardsController.walletInfo.get(1));
+                                controller.getMtnAccNumber().setText(WalletCardsController.walletInfo.get(2));
+
+                            }
+                            case "addTigoAcc" -> {
+                                controller.getTigoAccName().setText(WalletCardsController.walletInfo.get(1));
+                                controller.getTigoAccNumber().setText(WalletCardsController.walletInfo.get(2));
+
+                            }
+                            case "addVodaAcc" -> {
+                                controller.getVodaAccName().setText(WalletCardsController.walletInfo.get(1));
+                                controller.getVodaAccNumber().setText(WalletCardsController.walletInfo.get(2));
+
+                            }
+                        }
+                    }
+            );*/
+            sendWalletInfoThread.start();
+
+            WalletCardsController wc = new WalletCardsController();
+            wc.initializeData();
 
 
             ChangingScenes.translateScene(WalletsController.class, WalletsController.duplicateParentStack,
                     verificationAnchorPane, "wallets", 'b');
 
-            sendWalletInfoThread.start();
+
 
 
         } else {

@@ -15,143 +15,155 @@
    <children>
       <AnchorPane fx:id="metersAnchorPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="821.0" style="-fx-background-radius: 20; -fx-background-color: #fff;">
          <children>
-            <HBox layoutX="43.0" layoutY="44.0">
+            <HBox alignment="CENTER" layoutX="43.0" layoutY="44.0">
                <children>
                   <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
                      <children>
-                        <ImageView fx:id="prepaidMeter1_img" fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                        <ImageView fx:id="prepaidMeter1_img" fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" onMouseClicked="#openElectricityMeterInfo" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
                            <image>
                               <Image url="@../../images/card1.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <MFXButton layoutX="23.0" layoutY="150.0" onMouseClicked="#topUpPrepaid" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: transparent; -fx-border-color: #d1d1d1; -fx-border-width: 1; -fx-background-radius: 5; -fx-border-radius: 5;" text="Buy Credit" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
                         </MFXButton>
-                        <VBox layoutX="23.0" layoutY="36.0">
+                        <VBox layoutX="23.0" layoutY="32.0">
                            <children>
-                              <Label fx:id="meterNameLabel_1" text="Adjei House">
+                              <Label fx:id="meterNameLabel" text="Unregistered" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="meterIdLabel_1" text="P1234567" textFill="WHITE" />
+                              <Label fx:id="meterIdLabel" text="??????????" textFill="WHITE" />
                            </children>
                         </VBox>
-                        <MFXButton fx:id="deleteMeter_1_btn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="135.0" layoutY="149.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button">
+                        <MFXButton fx:id="addElectricityMeter" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="127.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#addElectricityMeter" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
                            <graphic>
-                              <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
+                        <MFXButton fx:id="deleteElectricityMeter" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="127.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#deleteElectricityMeter" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/electricity_96px%201.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                         </MFXButton>
                      </children>
                   </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
+                  <AnchorPane maxHeight="-Infinity" prefHeight="197.0" prefWidth="180.0">
                      <children>
-                        <ImageView fx:id="postpaidMeter1_img" fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                        <ImageView fx:id="postpaidMeter1_img" fitHeight="212.0" fitWidth="159.0" layoutX="-7.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
                            <image>
                               <Image url="@../../images/postpaid.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </ImageView>
-                        <MFXButton layoutX="24.0" layoutY="141.0" onMouseClicked="#payBill" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: transparent; -fx-border-color: #d1d1d1; -fx-border-width: 1; -fx-background-radius: 5; -fx-border-radius: 5;" text="Pay Bill" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="12.0" />
-                           </font>
-                        </MFXButton>
-                        <VBox layoutX="24.0" layoutY="20.0">
+                        <VBox layoutX="23.0" layoutY="33.0">
                            <children>
-                              <Label fx:id="meterNameLabel_2" text="myHouse">
+                              <Label text="Unregistered" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="meterIdLabel_2" text="Q1234567" textFill="WHITE" />
+                              <Label text="?????????" textFill="WHITE" />
                            </children>
                         </VBox>
-                        <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="119.0" layoutY="132.0" style="-fx-background-color: transparent;" />
-                        <MFXButton fx:id="deleteMeter_2_btn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="129.0" layoutY="140.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button">
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="126.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
                            <graphic>
-                              <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
+                        <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="126.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/electricity_96px%201.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                         </MFXButton>
                      </children>
                   </AnchorPane>
                   <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
                      <children>
-                        <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                        <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
                            <image>
                               <Image url="@../../images/add%20prepaid.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </ImageView>
                         <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="146.0" style="-fx-background-color: transaction;" />
-                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="135.0" layoutY="153.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                        <VBox layoutX="25.0" layoutY="30.0">
+                           <children>
+                              <Label text="Unregistered" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="?????????" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="124.0" layoutY="148.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
                            <graphic>
-                              <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/plus_white.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                         </MFXButton>
-                        <VBox layoutX="25.0" layoutY="28.0">
-                           <children>
-                              <Label fx:id="meterNameLabel_21" text="Unregistered">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="meterIdLabel_21" text="?????????" textFill="WHITE" />
-                           </children>
-                        </VBox>
                      </children>
                   </AnchorPane>
                   <AnchorPane maxHeight="-Infinity" prefHeight="158.0" prefWidth="180.0">
                      <children>
-                        <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
+                        <ImageView fitHeight="212.0" fitWidth="159.0" layoutX="-9.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" x="20.0" y="30.0">
                            <image>
                               <Image url="@../../images/add%20postpaid.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </ImageView>
                         <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="116.0" layoutY="135.0" style="-fx-background-color: transaction;" />
-                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="126.0" layoutY="152.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #218BD9; -fx-background-radius: 30;">
+                        <VBox layoutX="25.0" layoutY="34.0">
+                           <children>
+                              <Label text="Unregistered" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="?????????" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="122.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
                            <graphic>
-                              <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/plus_white.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                         </MFXButton>
-                        <VBox layoutX="28.0" layoutY="20.0">
-                           <children>
-                              <Label fx:id="meterNameLabel_22" text="Unregistered">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="meterIdLabel_22" text="?????????" textFill="WHITE" />
-                           </children>
-                        </VBox>
                      </children>
                   </AnchorPane>
                </children>
@@ -160,37 +172,50 @@
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="172.0">
                      <children>
-                        <ImageView fitHeight="185.0" fitWidth="181.0" layoutX="-48.0" layoutY="-340.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
+                        <ImageView fx:id="waterMeterImg" fitHeight="185.0" fitWidth="181.0" layoutX="-48.0" layoutY="-340.0" onMouseClicked="#openWaterMeterInfo" pickOnBounds="true" preserveRatio="true" x="50.0" y="340.0">
                            <image>
                               <Image url="@../../images/water.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
-                        <Label layoutX="14.0" layoutY="30.0" text="FHouse Meter">
+                        <VBox layoutX="14.0" layoutY="30.0">
+                           <children>
+                              <Label fx:id="waterMeterName" text="Unregistered">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="waterMeterId" prefHeight="19.0" prefWidth="140.0" text="??????????">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <MFXButton layoutX="21.0" layoutY="136.0" onMouseClicked="#payBill" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: transparent; -fx-border-color: #d1d1d1; -fx-border-width: 1; -fx-background-radius: 5; -fx-border-radius: 5;" text="Pay Bill" textFill="WHITE">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="67.0" prefHeight="19.0" prefWidth="140.0" text="1001-0110-1001-1110">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <MFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="133.0" layoutY="137.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button">
+                        </MFXButton>
+                        <MFXButton fx:id="addWaterMeter" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="127.0" layoutY="136.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#addWaterMeter" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #218BD9; -fx-background-radius: 50;">
                            <graphic>
-                              <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/plus_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MFXButton>
+                        <MFXButton fx:id="deleteWaterMeter" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="127.0" layoutY="136.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#deleteWaterMeter" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D81818; -fx-background-radius: 20;" text="Button" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/electricity_96px%201.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </MFXButton>
-                        <MFXButton layoutX="14.0" layoutY="135.0" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: transparent; -fx-border-color: #d1d1d1; -fx-border-width: 1; -fx-background-radius: 5; -fx-border-radius: 5;" text="Pay Bill" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="12.0" />
-                           </font>
                         </MFXButton>
                      </children>
                   </AnchorPane>
@@ -200,16 +225,16 @@
                            <image>
                               <Image url="@../../images/add%20water%20meter.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </ImageView>
-                        <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="52.0" layoutY="70.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="150.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/+.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MFXButton>
+                        <MFXButton contentDisplay="GRAPHIC_ONLY" layoutX="52.0" layoutY="70.0" style="-fx-background-color: transparent;" />
+                        <ImageView fitHeight="150.0" fitWidth="51.0" layoutX="64.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/+.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>

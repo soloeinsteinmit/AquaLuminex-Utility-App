@@ -11,7 +11,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -37,17 +36,16 @@ public class TopUpPrepaidController implements Initializable {
 
         WalletCardsController.loadWalletsCards(topUpScrollPane);
 
+        availabelBalance.setText("00.00");
 
-        try {
-            WalletCardsController.initializeWalletData(topUpScrollPane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        //WalletCardsController.initializeWalletData(topUpScrollPane);
+        //WalletCardsController.initializeWalletData();
+
     }
 
     @FXML
     void backToMeterPage(MouseEvent event) {
-        ChangingScenes.translateScene(MetersController.class, topUpStack, topUpPrepaidAnchorPane,
+        ChangingScenes.translateScene(MetersController.class, MetersController.METERS_STACKPANE, topUpPrepaidAnchorPane,
                 "meters", 'b');
     }
 
